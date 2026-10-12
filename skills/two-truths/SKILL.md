@@ -1,6 +1,6 @@
 ---
 name: two-truths
-description: Icebreaker with guardrails: three statements per person, all public work facts, one false; the group votes eyes-closed. Nobody is publicly wrong about a colleague.
+description: "Icebreaker with guardrails: three statements per person, all public work facts, one false; the group votes eyes-closed. Nobody is publicly wrong about a colleague."
 version: 2.0.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

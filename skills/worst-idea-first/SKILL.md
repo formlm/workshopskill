@@ -1,6 +1,6 @@
 ---
 name: worst-idea-first
-description: Reverse brainstorm: five minutes engineering how a real target fails, then flip every item into prevention. The game rewards saying the awkward thing.
+description: "Reverse brainstorm: five minutes engineering how a real target fails, then flip every item into prevention. The game rewards saying the awkward thing."
 version: 2.0.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

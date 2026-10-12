@@ -1,6 +1,6 @@
 ---
 name: start-stop-continue
-description: Wall retrospective with three verbs: start, stop, continue. One behavior per card, never a person; no card survives without an owner and a date.
+description: "Wall retrospective with three verbs: start, stop, continue. One behavior per card, never a person; no card survives without an owner and a date."
 version: 2.0.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

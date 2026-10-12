@@ -1,6 +1,6 @@
 ---
 name: blanket-drop
-description: Two-team name game behind a dropping blanket: first correct shout scores, wrong names give a free point. Planted-feet safety rule; names learned at recall speed.
+description: "Two-team name game behind a dropping blanket: first correct shout scores, wrong names give a free point. Planted-feet safety rule; names learned at recall speed."
 version: 2.0.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

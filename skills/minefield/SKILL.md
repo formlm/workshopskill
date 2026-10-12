@@ -1,6 +1,6 @@
 ---
 name: minefield
-description: Trust exercise in pairs: a blindfolded walker crosses a soft-obstacle course guided by voice only. Stop-word is absolute; both trust directions get debriefed.
+description: "Trust exercise in pairs: a blindfolded walker crosses a soft-obstacle course guided by voice only. Stop-word is absolute; both trust directions get debriefed."
 version: 2.0.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

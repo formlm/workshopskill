@@ -1,6 +1,6 @@
 ---
 name: silent-lineup
-description: Whole-group lineups in silence: birthday round then seniority round. Non-verbal coordination reveals who leads, who follows early, and who unsticks jams.
+description: "Whole-group lineups in silence: birthday round then seniority round. Non-verbal coordination reveals who leads, who follows early, and who unsticks jams."
 version: 2.1.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

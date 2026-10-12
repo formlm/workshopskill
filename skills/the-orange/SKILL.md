@@ -1,6 +1,6 @@
 ---
 name: the-orange
-description: Positions-vs-interests negotiation: two teams, one orange, hidden complementary briefs (flesh vs peel). Half-half is legal; integration is the lesson.
+description: "Positions-vs-interests negotiation: two teams, one orange, hidden complementary briefs (flesh vs peel). Half-half is legal; integration is the lesson."
 version: 2.0.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

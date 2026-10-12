@@ -1,6 +1,6 @@
 ---
 name: common-ground
-description: Group icebreaker with a scoring engine: facts true of everyone score 1, surprising grounds score 3, opinions score 0, every member verifies every line.
+description: "Group icebreaker with a scoring engine: facts true of everyone score 1, surprising grounds score 3, opinions score 0, every member verifies every line."
 version: 2.0.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

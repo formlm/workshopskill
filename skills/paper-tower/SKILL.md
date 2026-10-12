@@ -1,6 +1,6 @@
 ---
 name: paper-tower
-description: Team build challenge: 20 sheets, 1 m tape, 12 minutes; the tallest tower that holds a book for ten seconds wins. The book test exposes the height-vs-stability trade.
+description: "Team build challenge: 20 sheets, 1 m tape, 12 minutes; the tallest tower that holds a book for ten seconds wins. The book test exposes the height-vs-stability trade."
 version: 2.0.0
 license: CC-BY-4.0
 allowed-tools: Read, Write, Bash(curl:*), Bash(unzip:*), Bash(npm:*), Bash(formlm-cli:*), Bash(python3:*)

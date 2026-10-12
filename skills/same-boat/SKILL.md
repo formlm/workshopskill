@@ -9,7 +9,7 @@ metadata:
   group_size: 6
   duration_minutes: 20
   setting: hybrid
-  props: [poker write cards, shared "same boat" card, "still different" card]
+  props: [["poker write cards", "shared \"same boat\" card", "\"still different\" card"]]
   depth: tool-type
   language: en
   updated: 2026-10-09
