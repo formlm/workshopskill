@@ -1,0 +1,102 @@
+{
+  "id": "ws-template-workshop-feedback-form",
+  "name": "Workshop Feedback Form",
+  "version": "1.0.0",
+  "type": "exit-ticket",
+  "unit": "individual",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "median + asset-counts",
+    "reverse_scored_items": [],
+    "range": [
+      1,
+      5
+    ],
+    "reported": [
+      "item_means",
+      "recommendation_median",
+      "quote_count",
+      "demand_clusters"
+    ],
+    "report_note": "Report the median of the recommendation score plus the two asset counts (permissioned quotes, clustered demands). Item means are a health check, not the product. Under 30 responses, read the raw distribution instead of an NPS percentage."
+  },
+  "timing": {
+    "complete_minutes": 2,
+    "distribute": "at the door, in the exit path",
+    "late_window": "none for public events"
+  },
+  "language": "en",
+  "description": "The 90-second exit ticket for public workshops: 4 rating items (1-5), one 0-10 recommendation score, and two open questions that produce permissioned testimonials and a voted demand list for the next event.",
+  "instructions": {
+    "when": "At the door, as people leave. The box sits in the exit path; the card is poker-size, the pen is on the table. Never promise a form by email tomorrow - for public events the next-day response rate rounds to zero.",
+    "how": "Anonymous by default; quotable by choice (the permission checkbox on the testimonial card). Ninety seconds is the polite maximum."
+  },
+  "items": [
+    {
+      "id": "wff-01",
+      "construct": "promise",
+      "text": "The workshop delivered what its description promised.",
+      "reverse": false
+    },
+    {
+      "id": "wff-02",
+      "construct": "pace",
+      "text": "The length and pace were right for the material.",
+      "reverse": false
+    },
+    {
+      "id": "wff-03",
+      "construct": "working-not-listening",
+      "text": "The facilitator kept the group working, not just listening.",
+      "reverse": false
+    },
+    {
+      "id": "wff-04",
+      "construct": "standalone-usefulness",
+      "text": "I can use something from today without buying anything else.",
+      "reverse": false
+    }
+  ],
+  "nps_item": {
+    "id": "wff-05",
+    "prompt": "0-10: how likely are you to recommend this workshop to a colleague?",
+    "scale": [
+      0,
+      10
+    ],
+    "labels": [
+      "not at all",
+      "definitely"
+    ]
+  },
+  "open_items": [
+    {
+      "id": "wff-06",
+      "prompt": "In one sentence: what did this workshop give you?",
+      "codes_to": "testimonial file (quote with permission)"
+    },
+    {
+      "id": "wff-07",
+      "prompt": "What workshop should we run next?",
+      "codes_to": "programming demand list"
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "strongly disagree",
+      "disagree",
+      "neutral",
+      "agree",
+      "strongly agree"
+    ]
+  },
+  "report": {
+    "title": "Workshop Feedback Form — event summary",
+    "sections": [
+      "Recommendation score (median) and raw distribution",
+      "Permissioned quote count and the strongest quote",
+      "Top three demanded topics by cluster count"
+    ]
+  }
+}

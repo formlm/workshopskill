@@ -1,0 +1,82 @@
+{
+  "id": "ws-tool-rotate-the-lead",
+  "name": "Rotate the Lead",
+  "version": "2.1.0",
+  "type": "artifact-template",
+  "license": "CC-BY-4.0",
+  "language": "en",
+  "site": "https://workshopskill.com/en/activities/rotate-the-lead/",
+  "slug": "rotate-the-lead",
+  "duration_minutes": 25,
+  "unit": "one working group of 8–16 (two parallel rounds above 12)",
+  "columns": [
+    "Round 1 restatement",
+    "Round 2 the blocker",
+    "Round 3 the call",
+    "Round 4 the pass"
+  ],
+  "flow": [
+    {
+      "minutes": "0–4",
+      "phase": "Set",
+      "does": "Pick the real, finishable task; agree what done means"
+    },
+    {
+      "minutes": "4–8",
+      "phase": "Round 1",
+      "does": "Restate, steer, one call with an owner"
+    },
+    {
+      "minutes": "8–12",
+      "phase": "Round 2",
+      "does": "Find the blocker before steering"
+    },
+    {
+      "minutes": "12–16",
+      "phase": "Round 3",
+      "does": "Make the call the task still needs"
+    },
+    {
+      "minutes": "16–20",
+      "phase": "Round 4",
+      "does": "Pass on a usable summary"
+    },
+    {
+      "minutes": "20–25",
+      "phase": "Name it",
+      "does": "One leadership move per person"
+    }
+  ],
+  "fields": [
+    "task",
+    "done_definition",
+    "round",
+    "lead",
+    "restated_goal",
+    "done_so_far",
+    "next_move",
+    "call",
+    "call_owner"
+  ],
+  "commitment": [
+    "What a clean handover needs, in our own words",
+    "The call each round made, and who owns it",
+    "Where the thread wobbled — our real handover risk",
+    "Where the lead genuinely rotates in real work"
+  ],
+  "debrief_prompts": [
+    "Which handovers landed cleanly, and which made the team lose a beat?",
+    "Did anyone direct before restating — what did the room do about it?",
+    "Who surprised you, either way?",
+    "Was each call visible and owned, or did it evaporate?",
+    "What did the one-call rule stop from being decided by drift?",
+    "Where does the lead genuinely rotate in your real work?"
+  ],
+  "watch_outs": [
+    "The task is too big to move in four minutes — shrink it first.",
+    "The real manager keeps re-taking the pen — that is the finding; give them a normal turn late.",
+    "Everyone only repeats the previous lead — require the next move as their own call."
+  ],
+  "note": "No pre/post measure in this folder: the artifact is the point. Hand this spec to an agent to render a fillable sheet or a live form.",
+  "attribution": "Rotate the Lead · WorkshopSkill · CC BY 4.0"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "ws-tool-the-leader-checkup",
+  "name": "The Leader Checkup",
+  "version": "2.1.0",
+  "type": "artifact-template",
+  "license": "CC-BY-4.0",
+  "language": "en",
+  "site": "https://workshopskill.com/en/activities/the-leader-checkup/",
+  "slug": "the-leader-checkup",
+  "duration_minutes": 25,
+  "unit": "one leader and the people who report to them",
+  "columns": [
+    "Keep doing",
+    "Blocking — when you X, we Y",
+    "One ask"
+  ],
+  "flow": [
+    {
+      "minutes": "0–7",
+      "phase": "Write",
+      "does": "One keep, one block, one ask; the leader writes a self-critique too"
+    },
+    {
+      "minutes": "7–15",
+      "phase": "Speak & listen",
+      "does": "Round robin; the leader does not defend"
+    },
+    {
+      "minutes": "15–20",
+      "phase": "Reflect back",
+      "does": "The leader says what they heard and asks one question"
+    },
+    {
+      "minutes": "20–25",
+      "phase": "Commit",
+      "does": "One concrete change with a follow-up date"
+    }
+  ],
+  "fields": [
+    "keep",
+    "block_behaviour",
+    "block_impact",
+    "ask",
+    "reflect_back",
+    "hard_to_hear",
+    "commitment",
+    "follow_up_date"
+  ],
+  "commitment": [
+    "Reflect back — what I actually heard",
+    "The one thing I will not defend, and why it was hard",
+    "My commitment — one concrete change",
+    "Follow-up date — and what the team will watch for"
+  ],
+  "debrief_prompts": [
+    "Leader: what did you hear that genuinely surprised you?",
+    "Leader: where did you feel the pull to defend?",
+    "Team: did it feel safe to be honest — what made it safer?",
+    "Team: did the leader listen, or wait to respond?",
+    "Both: what exactly will be different, and how will we all know?",
+    "Both: who owns the follow-up date, and what happens if it slips?"
+  ],
+  "watch_outs": [
+    "The leader starts defending — park explanations until after.",
+    "The team gives only “everything’s great” — the leader opens with a real self-critique.",
+    "A block becomes a character attack — reframe to behaviour plus impact."
+  ],
+  "note": "No pre/post measure in this folder: the artifact is the point. Hand this spec to an agent to render a fillable sheet or a live form.",
+  "attribution": "The Leader Checkup · WorkshopSkill · CC BY 4.0"
+}

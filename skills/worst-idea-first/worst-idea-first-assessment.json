@@ -1,0 +1,96 @@
+{
+  "id": "ws-activity-worst-idea-first",
+  "name": "Worst Idea First",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "group",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "wi-03"
+    ],
+    "range": [
+      6,
+      30
+    ],
+    "reported": [
+      "group_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report group-level deltas only. Never rank groups or individuals — the round measures the room's safety, not wit."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 20,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for the Worst Idea First reverse-brainstorm. Scores at group level: how did saying awkward things, risk naming and safety to be specific change across the round?",
+  "instructions": {
+    "pre": "Before groups form. Each participant answers alone, about their own last week at work — not about the exercise.",
+    "post": "Immediately after the debrief. Same items, now answered about the round just completed, as a group."
+  },
+  "items": [
+    {
+      "id": "wi-01",
+      "construct": "voice",
+      "pre_text": "I say the awkward thing in meetings, not after them.",
+      "post_text": "During the worst round, awkward things got said inside the game.",
+      "reverse": false
+    },
+    {
+      "id": "wi-02",
+      "construct": "risk-naming",
+      "pre_text": "I name risks before they happen, not in the post-mortem.",
+      "post_text": "The worst ideas named real risks — before any of them happened.",
+      "reverse": false
+    },
+    {
+      "id": "wi-03",
+      "construct": "self-censorship",
+      "pre_text": "I keep the risky half of my opinion to myself.",
+      "post_text": "There was a worst idea I thought of and did not say.",
+      "reverse": true
+    },
+    {
+      "id": "wi-04",
+      "construct": "specificity",
+      "pre_text": "My feedback is specific enough to act on.",
+      "post_text": "The flipped actions were specific: owners, dates, one line each.",
+      "reverse": false
+    },
+    {
+      "id": "wi-05",
+      "construct": "play-as-safety",
+      "pre_text": "Playfulness helps my team say true things.",
+      "post_text": "The laughter made the room more honest, not less.",
+      "reverse": false
+    },
+    {
+      "id": "wi-06",
+      "construct": "flip-habit",
+      "pre_text": "When I spot a failure mode, I can flip it into a preventive action.",
+      "post_text": "Flipping worst to prevent came naturally by the second round.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Worst Idea First — group safety delta",
+    "sections": [
+      "Worst ideas generated: count, specificity, disguised complaints surfaced",
+      "Construct deltas with item-level evidence",
+      "One scheduled worst-idea round with a real target and date"
+    ]
+  }
+}

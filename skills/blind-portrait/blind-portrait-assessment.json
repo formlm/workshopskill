@@ -1,0 +1,96 @@
+{
+  "id": "ws-activity-blind-portrait",
+  "name": "Blind Portrait",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "pair",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "bp-03"
+    ],
+    "range": [
+      6,
+      30
+    ],
+    "reported": [
+      "pair_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report pair-level deltas only. Never rank individuals — the exercise measures the pair's communication loop, not personal talent."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 15,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for the Blind Portrait communication exercise. Scores at pair level: how did instruction-giving, listening and assumption-checking change between round A (no questions) and round B (three questions)?",
+  "instructions": {
+    "pre": "Before pairing up. Each participant answers alone, about their own last week at work — not about the exercise.",
+    "post": "Immediately after the debrief. Same items, now answered about the exercise just completed, as a pair."
+  },
+  "items": [
+    {
+      "id": "bp-01",
+      "construct": "instruction-clarity",
+      "pre_text": "When I give instructions, I check what the listener already assumes.",
+      "post_text": "During the exercise, we checked what the other assumed before starting.",
+      "reverse": false
+    },
+    {
+      "id": "bp-02",
+      "construct": "assumption-behavior",
+      "pre_text": "When I am unsure, I ask rather than guess.",
+      "post_text": "When the drawer was unsure in round B, we asked rather than guessed.",
+      "reverse": false
+    },
+    {
+      "id": "bp-03",
+      "construct": "one-way-communication",
+      "pre_text": "I send instructions into silence and find out later what was understood.",
+      "post_text": "In round A, we sent information into silence and saw the result on paper.",
+      "reverse": true
+    },
+    {
+      "id": "bp-04",
+      "construct": "perspective-taking",
+      "pre_text": "I adapt how I explain based on who is listening.",
+      "post_text": "As describer in round B, we changed our explanation because of who was drawing.",
+      "reverse": false
+    },
+    {
+      "id": "bp-05",
+      "construct": "repair",
+      "pre_text": "When a misunderstanding surfaces, I go back and fix the instruction, not the person.",
+      "post_text": "When the gap surfaced at the reveal, we fixed the describing, not the drawer.",
+      "reverse": false
+    },
+    {
+      "id": "bp-06",
+      "construct": "evidence-over-intent",
+      "pre_text": "I can tell the difference between 'I explained it' and 'they understood it'.",
+      "post_text": "The two drawings showed the difference between explaining and understanding.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Blind Portrait — pair communication delta",
+    "sections": [
+      "Round A vs round B judge-card scores",
+      "Construct deltas with item-level evidence",
+      "One suggested repair habit per pair, derived from the largest positive delta"
+    ]
+  }
+}

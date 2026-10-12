@@ -1,0 +1,96 @@
+{
+  "id": "ws-activity-common-ground",
+  "name": "Common Ground",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "group",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "cg-03"
+    ],
+    "range": [
+      6,
+      30
+    ],
+    "reported": [
+      "group_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report group-level deltas only. Never rank groups or individuals — the hunt measures the group's question-asking habits, not talent."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 15,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for the Common Ground icebreaker. Scores at group level: how did curiosity, second questions, listening and safety to disagree change across the hunt?",
+  "instructions": {
+    "pre": "Before groups form. Each participant answers alone, about their own last week at work — not about the exercise.",
+    "post": "Immediately after the debrief. Same items, now answered about the hunt just completed, as a group."
+  },
+  "items": [
+    {
+      "id": "cg-01",
+      "construct": "curiosity",
+      "pre_text": "After someone answers me, I ask one more question.",
+      "post_text": "During the hunt, we asked a second question after easy answers.",
+      "reverse": false
+    },
+    {
+      "id": "cg-02",
+      "construct": "surface-to-depth",
+      "pre_text": "I know at least one non-work fact about each of my closest colleagues.",
+      "post_text": "The hunt uncovered non-obvious facts about people I thought I knew.",
+      "reverse": false
+    },
+    {
+      "id": "cg-03",
+      "construct": "first-answer-settling",
+      "pre_text": "I take the first workable answer and move on.",
+      "post_text": "We camped on 1-point grounds until the scoring pushed us deeper.",
+      "reverse": true
+    },
+    {
+      "id": "cg-04",
+      "construct": "listening",
+      "pre_text": "I can repeat the last thing a quiet colleague said in a meeting.",
+      "post_text": "The quietest member's contribution made it onto our card.",
+      "reverse": false
+    },
+    {
+      "id": "cg-05",
+      "construct": "safety-to-disagree",
+      "pre_text": "I say 'actually, that's not true for me' when a group claim misses me.",
+      "post_text": "When a ground didn't hold for someone, they said so — and the group thanked them.",
+      "reverse": false
+    },
+    {
+      "id": "cg-06",
+      "construct": "belonging",
+      "pre_text": "I feel I belong on my current team.",
+      "post_text": "Finding shared ground changed how belonging feels for this group.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Common Ground — group curiosity delta",
+    "sections": [
+      "Recorder-card score: grounds found, 3-pointers identified",
+      "Construct deltas with item-level evidence",
+      "One suggested question habit per group, derived from the largest positive delta"
+    ]
+  }
+}

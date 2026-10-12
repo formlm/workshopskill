@@ -1,0 +1,149 @@
+{
+  "id": "ws-template-training-evaluation-form",
+  "name": "Training Evaluation Form",
+  "version": "1.0.0",
+  "type": "evaluation",
+  "unit": "individual",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "level-wise: mean + delta + behavior-count",
+    "reverse_scored_items": [],
+    "range": [
+      1,
+      5
+    ],
+    "reported": [
+      "item_means",
+      "lowest_item",
+      "confidence_delta",
+      "day30_behavior_count"
+    ],
+    "report_note": "Report levels in separate lines, never averaged together: item means for reaction, deltas (if a baseline exists) for confidence, raw counts for day-30 behavior. Self-reports without a baseline are labeled 'self-report, no baseline'. Level 4 is out of scope for any form — say so."
+  },
+  "timing": {
+    "complete_minutes": 7,
+    "distribute": "last minutes of final session, in-room",
+    "late_window": "day-30 email follow-up"
+  },
+  "language": "en",
+  "description": "A Kirkpatrick-ready evaluation pack for corporate training: 8 reaction items, 3 confidence self-reports (level-2 proxy), 2 keep/change open questions, and a 3-item day-30 follow-up email (level-3 behavior check). Produces a management one-pager.",
+  "instructions": {
+    "when": "The reaction items, confidence self-reports and keep/change questions in the last minutes of the final session, in the room. The follow-up by email 30 days later, from the person participants know.",
+    "how": "Anonymous. Levels are reported in separate lines, never averaged together — the gap between reaction and behavior is the finding."
+  },
+  "items": [
+    {
+      "id": "tef-01",
+      "construct": "relevance",
+      "text": "The content matched the work I actually do.",
+      "reverse": false
+    },
+    {
+      "id": "tef-02",
+      "construct": "depth",
+      "text": "The material went deeper than generalities.",
+      "reverse": false
+    },
+    {
+      "id": "tef-03",
+      "construct": "instructor",
+      "text": "The instructor answered questions with substance.",
+      "reverse": false
+    },
+    {
+      "id": "tef-04",
+      "construct": "materials",
+      "text": "The materials are ones I will open again.",
+      "reverse": false
+    },
+    {
+      "id": "tef-05",
+      "construct": "exercises",
+      "text": "Exercises took more time than listening.",
+      "reverse": false
+    },
+    {
+      "id": "tef-06",
+      "construct": "logistics",
+      "text": "Sign-up, schedule and room were handled well.",
+      "reverse": false
+    },
+    {
+      "id": "tef-07",
+      "construct": "workload",
+      "text": "The workload fit alongside my job.",
+      "reverse": false
+    },
+    {
+      "id": "tef-08",
+      "construct": "overall",
+      "text": "Overall, this training was worth my time.",
+      "reverse": false
+    }
+  ],
+  "self_report_items": [
+    {
+      "id": "tef-s1",
+      "construct": "apply",
+      "text": "I can apply the main method from this training without help."
+    },
+    {
+      "id": "tef-s2",
+      "construct": "explain",
+      "text": "I can explain the core idea to a colleague in two minutes."
+    },
+    {
+      "id": "tef-s3",
+      "construct": "recover",
+      "text": "I know where to look when I get stuck applying it."
+    }
+  ],
+  "open_items": [
+    {
+      "id": "tef-09",
+      "prompt": "What worked so well it should stay exactly as it is?",
+      "codes_to": "keep list (next design meeting agenda)"
+    },
+    {
+      "id": "tef-10",
+      "prompt": "What should change in the next run?",
+      "codes_to": "change list (next design meeting agenda)"
+    }
+  ],
+  "day30_followup": [
+    {
+      "id": "tef-f1",
+      "prompt": "Since the training, I have used the main method: (never / once / 2-5 times / weekly)",
+      "codes_to": "behavior count"
+    },
+    {
+      "id": "tef-f2",
+      "prompt": "What helped or blocked the using?",
+      "codes_to": "transfer-climate notes"
+    },
+    {
+      "id": "tef-f3",
+      "prompt": "What support would make it stick?",
+      "codes_to": "support backlog"
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "strongly disagree",
+      "disagree",
+      "neutral",
+      "agree",
+      "strongly agree"
+    ]
+  },
+  "report": {
+    "title": "Training Evaluation — management one-pager",
+    "sections": [
+      "Reaction: overall, lowest item by name, highest item by name",
+      "Confidence (self-report + delta where baseline exists)",
+      "Day-30: response count and used-it distribution",
+      "Keep and change: one permissioned verbatim each, plus the next-run recommendation"
+    ]
+  }
+}

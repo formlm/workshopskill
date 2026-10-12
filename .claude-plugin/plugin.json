@@ -1,0 +1,8 @@
+{
+  "name": "workshopskill",
+  "description": "46 facilitation activity skills, each with a run sheet, debrief script and pre/post measure spec. CC BY 4.0.",
+  "version": "1.0.0",
+  "author": { "name": "WorkshopSkill", "url": "https://workshopskill.com" },
+  "license": "CC-BY-4.0",
+  "homepage": "https://workshopskill.com"
+}

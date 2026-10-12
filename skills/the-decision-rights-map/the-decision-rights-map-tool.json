@@ -1,0 +1,70 @@
+{
+  "id": "ws-tool-the-decision-rights-map",
+  "name": "The Decision Rights Map",
+  "version": "2.1.0",
+  "type": "artifact-template",
+  "license": "CC-BY-4.0",
+  "language": "en",
+  "site": "https://workshopskill.com/en/activities/the-decision-rights-map/",
+  "slug": "the-decision-rights-map",
+  "duration_minutes": 25,
+  "unit": "a team that shares recurring decisions",
+  "columns": [
+    "Decides — one name",
+    "Consulted before",
+    "Informed after"
+  ],
+  "flow": [
+    {
+      "minutes": "0–5",
+      "phase": "List",
+      "does": "The recurring decisions this team actually makes"
+    },
+    {
+      "minutes": "5–13",
+      "phase": "Assign",
+      "does": "One decider, a consulted list, an informed list"
+    },
+    {
+      "minutes": "13–19",
+      "phase": "Spot",
+      "does": "Circle contested, blank, absent or group-owned rows"
+    },
+    {
+      "minutes": "19–25",
+      "phase": "Reassign",
+      "does": "Name one owner out loud and say what changes"
+    }
+  ],
+  "fields": [
+    "decision",
+    "decider",
+    "consulted",
+    "informed",
+    "unclear_flagged",
+    "new_owner",
+    "what_changes",
+    "still_consults"
+  ],
+  "commitment": [
+    "The decision that was contested, blank, absent or “the team”",
+    "Its single owner, named out loud",
+    "What changes now that it has one name",
+    "What the owner must still consult before moving"
+  ],
+  "debrief_prompts": [
+    "How many rows have a name you expected, and how many surprised you?",
+    "Which person appears on every row — is that clarity or a bottleneck?",
+    "Which rows have nobody willing to admit they own it?",
+    "Where does the real decider differ from the org chart?",
+    "For the circled row: was the ambiguity about who decides, or whether it should be a decision at all?",
+    "How will we notice in a month that the pen actually moved?"
+  ],
+  "watch_outs": [
+    "Nobody will claim a decision — ask who lives with the consequence.",
+    "Everyone wants the important one — ask what they would give to not own it.",
+    "It collapses into a committee — force a single name; consultation stays open."
+  ],
+  "note": "No pre/post measure in this folder: the artifact is the point. Hand this spec to an agent to render a fillable sheet or a live form.",
+  "attribution": "The Decision Rights Map · WorkshopSkill · CC BY 4.0"
+}

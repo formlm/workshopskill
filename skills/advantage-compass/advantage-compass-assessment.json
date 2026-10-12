@@ -1,0 +1,105 @@
+{
+  "id": "ws-self-assessment-advantage-compass",
+  "name": "Advantage Compass",
+  "version": "1.0.0",
+  "type": "self-assessment",
+  "unit": "individual",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "mean",
+    "reverse_scored_items": [
+      "ac-03",
+      "ac-04",
+      "ac-05"
+    ],
+    "range": [
+      1,
+      5
+    ],
+    "reported": [
+      "item_means",
+      "quadrant_allocation",
+      "committed_move"
+    ],
+    "report_note": "Reverse-score ac-03, ac-04, ac-05 before averaging. Low scores on ac-01/ac-02/ac-06 with high scores on the reverse items is the classic hostage calendar: competent, busy, and pointed nowhere. The quadrant hours from the audit outrank the Likert means — allocation beats opinion."
+  },
+  "timing": {
+    "complete_minutes": 25,
+    "distribute": "solo, self-paced",
+    "late_window": "re-run monthly"
+  },
+  "language": "en",
+  "description": "A personal strategy self-assessment: 6 Likert items (1-5) locating your work on the two axes of the Advantage Compass — strength vs weakness, vision vs pain — plus a two-week time audit and one committed move. A map, not a verdict.",
+  "instructions": {
+    "when": "Alone, 25 minutes, when the calendar is full but the direction is unclear. Re-run monthly; the delta between runs is the real score.",
+    "how": "Answer about your actual last two weeks, not your intentions. For the audit, estimate hours per quadrant from your calendar, not your memory."
+  },
+  "items": [
+    {
+      "id": "ac-01",
+      "construct": "strength-awareness",
+      "text": "I can name work I do with little effort that others call valuable — and I have written proof of it.",
+      "reverse": false
+    },
+    {
+      "id": "ac-02",
+      "construct": "vision-clarity",
+      "text": "I can say, in one sentence, what work I want to be doing in three years — and that sentence has survived the last year unchanged.",
+      "reverse": false
+    },
+    {
+      "id": "ac-03",
+      "construct": "pain-share",
+      "text": "Most of my week goes to what is urgent today rather than what builds the next three years.",
+      "reverse": true
+    },
+    {
+      "id": "ac-04",
+      "construct": "firefighting-trap",
+      "text": "I am regularly praised for work I am good at — and that praise has almost nothing to do with where I want to go.",
+      "reverse": true
+    },
+    {
+      "id": "ac-05",
+      "construct": "burnout-exposure",
+      "text": "On a normal week I spend real hours on work I am both bad at and drained by, with no plan to end it.",
+      "reverse": true
+    },
+    {
+      "id": "ac-06",
+      "construct": "golden-track-protection",
+      "text": "The work I am best at and care about most already has protected, named time on my calendar — not just a wish.",
+      "reverse": false
+    }
+  ],
+  "open_items": [
+    {
+      "id": "ac-07",
+      "prompt": "The two-week audit: roughly how many hours landed in each quadrant? One line per quadrant (golden track / learning / firefighting / burnout).",
+      "codes_to": "quadrant allocation"
+    },
+    {
+      "id": "ac-08",
+      "prompt": "One move: if only one thing changes next week, what is it — and what date do you check back on it?",
+      "codes_to": "committed move"
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "strongly disagree",
+      "disagree",
+      "neutral",
+      "agree",
+      "strongly agree"
+    ]
+  },
+  "report": {
+    "title": "Advantage Compass — your quadrant map",
+    "sections": [
+      "Axis scores: strength-awareness and vision-clarity versus pain-share and trap exposure",
+      "Quadrant allocation from the two-week audit, with the healthy-share table as reference",
+      "The one committed move, restated with its check-back date"
+    ]
+  }
+}

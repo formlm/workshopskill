@@ -1,0 +1,96 @@
+{
+  "id": "ws-activity-minefield",
+  "name": "Minefield",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "pair",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "mf-03"
+    ],
+    "range": [
+      6,
+      30
+    ],
+    "reported": [
+      "pair_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report pair-level deltas only. Never rank individuals — the crossing measures the pair's trust loop, not courage."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 20,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for the Minefield trust exercise. Scores at pair level: how did clarity under responsibility, trusting on voice alone, and using the stop word change across the two crossings?",
+  "instructions": {
+    "pre": "Before pairing up. Each participant answers alone, about their own last week at work — not about the exercise.",
+    "post": "Immediately after the debrief. Same items, now answered about both crossings, as a pair."
+  },
+  "items": [
+    {
+      "id": "mf-01",
+      "construct": "clarity-under-responsibility",
+      "pre_text": "When I am responsible for someone, my instructions get clearer.",
+      "post_text": "As navigator, responsibility made our instructions clearer.",
+      "reverse": false
+    },
+    {
+      "id": "mf-02",
+      "construct": "trust-on-voice",
+      "pre_text": "I can act on a colleague's word without seeing the situation myself.",
+      "post_text": "As walker, we acted on the voice without seeing the course.",
+      "reverse": false
+    },
+    {
+      "id": "mf-03",
+      "construct": "speed-over-clarity",
+      "pre_text": "Under pressure I talk faster instead of clearer.",
+      "post_text": "When the walker wobbled, the instructions got faster, not clearer.",
+      "reverse": true
+    },
+    {
+      "id": "mf-04",
+      "construct": "stop-word",
+      "pre_text": "I stop and ask before a risky step, even when it slows things down.",
+      "post_text": "The stop word (or the wish we had used it) showed up in our crossing.",
+      "reverse": false
+    },
+    {
+      "id": "mf-05",
+      "construct": "responsibility-weight",
+      "pre_text": "Being responsible for someone's outcome weighs on me more than my own.",
+      "post_text": "After swapping roles, being the navigator was the harder side of trust.",
+      "reverse": false
+    },
+    {
+      "id": "mf-06",
+      "construct": "repair",
+      "pre_text": "After a miscommunication, I rebuild the channel before continuing.",
+      "post_text": "After our near-miss, we changed how we talked — then kept walking.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Minefield — pair trust delta",
+    "sections": [
+      "Near-miss collection: one moment per pair, blame-free",
+      "Construct deltas with item-level evidence",
+      "One suggested navigation habit per pair, derived from the largest positive delta"
+    ]
+  }
+}

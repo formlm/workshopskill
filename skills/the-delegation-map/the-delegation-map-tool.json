@@ -1,0 +1,74 @@
+{
+  "id": "ws-tool-the-delegation-map",
+  "name": "The Delegation Map",
+  "version": "2.1.0",
+  "type": "artifact-template",
+  "license": "CC-BY-4.0",
+  "language": "en",
+  "site": "https://workshopskill.com/en/activities/the-delegation-map/",
+  "slug": "the-delegation-map",
+  "duration_minutes": 25,
+  "unit": "one leader + team, or a peer circle of leads",
+  "columns": [
+    "Only me",
+    "Coach someone",
+    "Anyone can run"
+  ],
+  "flow": [
+    {
+      "minutes": "0–5",
+      "phase": "Dump",
+      "does": "Every task the leader currently owns, one per note"
+    },
+    {
+      "minutes": "5–12",
+      "phase": "Sort",
+      "does": "Place each note in a zone; the leader speaks last"
+    },
+    {
+      "minutes": "12–16",
+      "phase": "Circle one",
+      "does": "The single highest-leverage hand-off this week"
+    },
+    {
+      "minutes": "16–22",
+      "phase": "Name it",
+      "does": "Owner, support, review date"
+    },
+    {
+      "minutes": "22–25",
+      "phase": "Say it",
+      "does": "One sentence per person about Monday"
+    }
+  ],
+  "fields": [
+    "task",
+    "zone",
+    "circled_hand_off",
+    "owner",
+    "support",
+    "review_date",
+    "per_person_sentence"
+  ],
+  "commitment": [
+    "The task (circled)",
+    "Owner — named, and they agreed",
+    "Support they get — an hour of coaching, a document, a decision right",
+    "Review date — and what “working” looks like then"
+  ],
+  "debrief_prompts": [
+    "Which column is fullest, and how did this plate get that way?",
+    "How many notes in Only me are accountability, and how many are habit?",
+    "Which note was uncomfortable to place in Anyone can run?",
+    "Why this hand-off and not the easier one next to it?",
+    "Did the owner agree, or were they assigned?",
+    "What will “working” look like on the review date?"
+  ],
+  "watch_outs": [
+    "Everything lands in Only me — the leader is protecting identity, not work.",
+    "Everything lands in Anyone can run — pull back the two notes carrying real accountability.",
+    "The circled hand-off has no named support — it is a dump; force one hour or one document."
+  ],
+  "note": "No pre/post measure in this folder: the artifact is the point. Hand this spec to an agent to render a fillable sheet or a live form.",
+  "attribution": "The Delegation Map · WorkshopSkill · CC BY 4.0"
+}

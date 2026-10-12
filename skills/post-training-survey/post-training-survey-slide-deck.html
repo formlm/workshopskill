@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="generator" content="WorkshopSkill Kit 2.0 — Deck Studio">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post-Training Survey — Slide Deck</title>
+<!--
+  WHITE LABEL: logo = img.logo · brand = :root vars · links = search "wslink"
+  (footer chip + closing QR). QR codes render from those hrefs at load.
+  This file is yours (CC BY 4.0 — keep the footer attribution line).
+  * Re-word anything: search for the text and edit it — this is plain HTML.
+  * Add your logo: find  <img class="logo"  below, set src="your-logo.png"
+    (ship the image next to this file) and remove the display:none style.
+  * Change the palette: the colors are CSS variables in :root, one line each.
+-->
+<style>
+:root{--paper:#FAF7F0;--ink:#2B2926;--stamp:#C0392B;--gray:#5A564F;
+  --rule:#A8C5D9;--kraft:#8A6D3F;--footline:#CCC1B3;}
+html,body{margin:0;height:100%;background:#161311;color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif CJK SC','Noto Serif CJK TC',
+  'Songti SC','Songti TC',serif;}
+#deck{position:relative;height:100vh;overflow:hidden;}
+.slide{position:absolute;inset:0;display:none;background:var(--paper);
+  padding:9vh 7vw 11vh;box-sizing:border-box;flex-direction:column;}
+.slide.act{display:flex;}
+.slide::before{content:'';position:absolute;top:5.2vh;left:7vw;width:96px;
+  height:3px;background:var(--stamp);}
+.slide>*{min-height:0;}
+.foot{position:absolute;left:7vw;right:7vw;bottom:3.4vh;padding-top:8px;
+  border-top:1px solid var(--footline);font-size:clamp(9px,1.1vw,13px);
+  color:var(--gray);display:flex;justify-content:space-between;gap:16px;}
+.foot a{color:var(--gray);text-decoration:none;}
+.foot a:hover{text-decoration:underline;}
+.logo{position:absolute;top:4vh;right:7vw;max-height:6vh;max-width:16vw;}
+@keyframes ain{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.ain{opacity:0;animation:ain .55s ease-out forwards;}
+.d1{animation-delay:.18s}.d2{animation-delay:.36s}
+.fg{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease;}
+.fg.on{opacity:1;transform:none;}
+.s-title{justify-content:center;text-align:center;align-items:center;}
+.s-title h1{font-size:clamp(30px,6.4vw,66px);margin:0 0 3.2vh;line-height:1.12;}
+.s-title .sub{font-size:clamp(14px,2.2vw,24px);color:var(--gray);margin:0 0 5.5vh;}
+.s-title .tline{max-width:62vw;font-size:clamp(14px,2.1vw,23px);line-height:1.6;
+  border-top:1px solid var(--rule);padding-top:3.4vh;}
+.s-question{justify-content:center;align-items:center;text-align:center;}
+.s-question .ql{font-size:clamp(22px,4.6vw,50px);font-weight:700;line-height:1.3;
+  max-width:74vw;margin:0;}
+.s-bullets h2{font-size:clamp(20px,3.6vw,38px);margin:2.5vh 0 0;
+  padding-bottom:1.6vh;border-bottom:2px solid var(--rule);align-self:flex-start;}
+.s-bullets ul{list-style:none;margin:4.5vh 0 0;padding:0;max-width:78vw;}
+.s-bullets li{font-size:clamp(15px,2.3vw,25px);line-height:1.5;margin-bottom:3.4vh;
+  padding-left:2em;position:relative;}
+.s-bullets li::before{content:'\2022';position:absolute;left:0;top:-0.06em;
+  color:var(--stamp);font-weight:700;font-size:1.25em;}
+.s-grid h2{font-size:clamp(20px,3.4vw,36px);margin:2.5vh 0 0;}
+.gwrap{flex:1;position:relative;margin:1.5vh 3vw 5vh;}
+.gcross-h{position:absolute;left:6%;right:6%;top:52%;border-top:2.5px solid var(--ink);
+  transform:scaleX(0);transform-origin:left;transition:transform .65s ease;}
+.gcross-v{position:absolute;top:4%;bottom:4%;left:50%;border-left:2.5px solid var(--ink);
+  transform:scaleY(0);transform-origin:top;transition:transform .65s ease;}
+.gcross-h.on{transform:scaleX(1);opacity:1;}
+.gcross-v.on{transform:scaleY(1);opacity:1;}
+.gax{position:absolute;font-size:clamp(10px,1.4vw,15px);color:var(--gray);white-space:nowrap;}
+.gax-l{left:14%;top:57%;}.gax-r{right:14%;top:57%;}
+.gax-t{left:52.8%;top:2.5%;writing-mode:vertical-rl;}
+.gax-b{left:52.8%;bottom:1.5%;writing-mode:vertical-rl;}
+.gq{position:absolute;width:36%;height:33%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;line-height:1.35;}
+.gq .gnum{font-size:clamp(10px,1.4vw,15px);color:var(--kraft);letter-spacing:.2em;}
+.gq .gname{font-size:clamp(15px,2.7vw,30px);font-weight:700;margin:.6vh 0;}
+.gq .gnote{font-size:clamp(10px,1.5vw,16px);color:var(--gray);}
+.gq1{left:6%;top:7%;}.gq2{right:6%;top:7%;}.gq3{left:6%;bottom:11%;}.gq4{right:6%;bottom:11%;}
+.s-demo h2{font-size:clamp(20px,3.4vw,36px);margin:2.5vh 0 0;}
+.dtab{border-collapse:collapse;margin:4vh auto 0;width:min(64vw,720px);}
+.dtab th{font-size:clamp(10px,1.3vw,14px);color:var(--kraft);font-weight:400;
+  text-align:left;padding:0 10px 1.4vh;border-bottom:1px solid var(--footline);
+  letter-spacing:.08em;}
+.dtab td{padding:2.2vh 10px;border-bottom:1px solid var(--footline);
+  font-size:clamp(13px,1.9vw,21px);}
+.dtab .wline{width:34%;border-bottom:2px solid var(--rule);height:1.1em;}
+.dtab .hh{color:var(--gray);font-size:clamp(11px,1.5vw,16px);text-align:right;white-space:nowrap;}
+.dnote{margin:4.2vh 0 0;text-align:center;color:var(--gray);
+  font-size:clamp(12px,1.8vw,19px);}
+.s-three{justify-content:center;}
+.s-three h2{font-size:clamp(20px,3.4vw,36px);margin:0 0 5vh;}
+.s-three .tq{font-size:clamp(15px,2.6vw,29px);font-weight:700;line-height:1.45;
+  max-width:76vw;margin:0 0 4.2vh;}
+.s-quote{justify-content:center;align-items:center;text-align:center;}
+.s-quote .q{font-size:clamp(15px,2.6vw,29px);line-height:1.5;max-width:72vw;margin:0 0 3.6vh;}
+.s-quote .qmid{font-weight:700;color:var(--stamp);}
+.s-quote .qmid.on{animation:stamp .42s cubic-bezier(.2,1.5,.4,1) both;}
+@keyframes stamp{from{opacity:0;transform:scale(1.6) rotate(-4deg)}
+  to{opacity:1;transform:scale(1) rotate(0)}}
+.hud{position:fixed;right:2.2vw;top:3.2vh;font-size:clamp(10px,1.2vw,14px);
+  color:var(--gray);z-index:5;font-family:Georgia,serif;}
+.hud .pno{background:rgba(250,247,240,.88);padding:2px 10px;border:1px solid var(--footline);}
+#hint{position:fixed;left:50%;transform:translateX(-50%);bottom:1.2vh;font-size:clamp(10px,1.2vw,14px);
+  color:var(--gray);z-index:5;opacity:1;transition:opacity 1s ease;
+  background:rgba(250,247,240,.88);padding:2px 10px;border:1px solid var(--footline);}
+#spk{position:fixed;left:2.2vw;bottom:5.2vh;max-width:60vw;display:none;z-index:5;
+  font-size:clamp(11px,1.5vw,17px);color:var(--kraft);background:rgba(250,247,240,.94);
+  border-left:3px solid var(--kraft);padding:1.2vh 1.4vw;}
+#prog{position:fixed;left:0;bottom:0;height:3px;width:100%;background:rgba(22,19,17,.18);z-index:6;}
+#bar{display:block;height:100%;width:0;background:var(--stamp);transition:width .3s ease;}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+  .ain{opacity:1;animation:none;}
+}
+
+/* ===== v2 stage chrome ===== */
+#drawer{position:fixed;left:0;right:0;bottom:0;z-index:8;display:none;background:rgba(20,19,17,.97);
+  color:#EFE7D5;font-size:clamp(11px,1.3vw,15px);border-top:2px solid var(--stamp);}
+#drawer.open{display:grid;grid-template-columns:1.2fr 2fr 1.2fr .9fr;gap:1.6vw;padding:1.4vh 2vw 5.6vh;}
+#drawer h4{margin:0 0 .6vh;color:var(--stamp);font-size:.86em;letter-spacing:.14em;font-weight:400;}
+#drawer .dnote{font-size:1.06em;line-height:1.45;min-height:3em;}
+#drawer .dnext{color:#B9B19B;} #drawer .dnext b{color:#EFE7D5;}
+.tbox{text-align:center;} .tbig{font-size:2em;font-variant-numeric:tabular-nums;}
+.tbox .alloc{color:#B9B19B;font-size:.9em;margin-top:.3em;} .tbox .alloc.over{color:#E88A5D;}
+.tbtns{margin-top:.8vh;display:flex;gap:6px;justify-content:center;}
+.tbtns button{font:inherit;background:transparent;border:1px solid #6E7683;color:#EFE7D5;padding:.2em .8em;border-radius:3px;cursor:pointer;}
+.tbtns button:hover{border-color:var(--stamp);color:var(--stamp);}
+.kcol{font-size:.92em;color:#B9B19B;line-height:1.7;}
+.kcol kbd{border:1px solid #6E7683;border-radius:3px;padding:0 .4em;font-family:inherit;}
+#footqr{position:fixed;right:1.4vw;bottom:5.6vh;width:clamp(64px,7.5vw,104px);display:none;z-index:6;
+  background:var(--paper);border:1px solid var(--footline);padding:5px;}
+#footqr svg{width:100%;height:auto;display:block;}
+body.fs #footqr{display:block;}
+body.big .hud,body.big #hint{display:none;}
+#ring{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9;display:none;
+  background:rgba(20,19,17,.94);border-radius:50%;padding:2.4vh;}
+#ring.run{display:block;} #ringArc{stroke-dasharray:157;}
+#ring text{fill:#F7F2E6;font-family:Georgia,serif;font-size:22px;}
+.s-close{justify-content:center;align-items:center;text-align:center;}
+.s-close h2{font-size:clamp(20px,3.4vw,36px);margin:2vh 0 3vh;color:var(--ink);}
+.qrslot{display:flex;align-items:center;gap:1.2vw;margin:1vh auto 0;border:1px dashed var(--stamp);padding:1.2vh 1.4vw;text-align:left;}
+.qrslot svg{width:96px;height:96px;flex:none;}
+.qrslot p{margin:0;font-size:clamp(11px,1.5vw,16px);color:var(--gray);max-width:44vw;line-height:1.45;}
+@media print{
+  html,body{background:#fff;height:auto;} #deck{height:auto;overflow:visible;}
+  .slide{position:relative;display:flex!important;width:297mm;height:209mm;padding:16mm 20mm 22mm;
+    page-break-after:always;}
+  .ain,.fg{opacity:1!important;transform:none!important;animation:none!important;}
+  .hud,#hint,#spk,#prog,#drawer,#ring,#footqr{display:none!important;}
+}
+@page{size:A4 landscape;margin:0;}
+
+/* ===== kit motif ===== */
+.motif{width:min(20vh,22vw);margin:0 auto 1.6vh;color:var(--stamp,#C0392B);}
+.motif svg{width:100%;height:auto;display:block;overflow:visible}
+@keyframes motifIn{from{opacity:0;transform:translateY(14px) scale(.9)}60%{opacity:1}to{opacity:1;transform:none}}
+.motif{animation:motifIn 1s cubic-bezier(.2,.9,.3,1) both;}
+@media (prefers-reduced-motion:reduce){.motif{animation:none;}}
+</style>
+</head>
+<body>
+<img class="logo" src="" alt="" style="display:none">
+<main id="deck">
+<section class="slide s-title">
+<div class="motif" aria-hidden="true"><svg viewBox="0 0 64 64"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 10 h36 v46 H14Z"/><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M24 6 h16 v8 H24Z"/><path fill="currentColor" stroke="none" d="M32 20 l1.8 3.6 4 .6 -2.9 2.8 .7 4 -3.6 -1.9 -3.6 1.9 .7 -4 -2.9 -2.8 4 -.6Z"/><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M22 36 h20 M22 42 h20 M22 48 h12"/></svg></div><!--motif-->
+  <h1 class="ain">Post-Training Survey</h1>
+  <p class="sub ain d1">A 5-minute feedback form that goes one step past the smile sheet</p>
+  <p class="tline fg">Satisfaction is easy to collect. The question sponsors actually ask is: will anything show up in the work? This survey is built to answer it.</p>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-question">
+  <p class="ql ain d0">Your last training report said everyone enjoyed it.</p>
+  <p class="ql ain d1">What did it say about Monday?</p>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-bullets">
+  <h2 class="ain">Where smile sheets stop</h2>
+  <ul>
+   <li class="fg">Kirkpatrick’s Level 1 measures reaction — pleasant, easy, nearly information-free.</li>
+   <li class="fg">Most evaluation stops there because satisfaction is safe to collect and nice to report.</li>
+   <li class="fg">A smile sheet can only go up. This survey can tell you what to fix.</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-bullets">
+  <h2 class="ain">What the eight questions measure</h2>
+  <ul>
+   <li class="fg">Six rows: relevance, transfer intent, pace, facilitation, clarity — and one blocker.</li>
+   <li class="fg">Item 2 is the bridge: “I can name one thing I will use within two weeks.”</li>
+   <li class="fg">Two open questions: the Monday commitment, and the honest obstacle.</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-bullets">
+  <h2 class="ain">The reverse item is the lie detector</h2>
+  <ul>
+   <li class="fg">Item 6: “Nothing from today will change how I work.” Low is good.</li>
+   <li class="fg">Polite rooms score everything 4 — including “nothing will change.”</li>
+   <li class="fg">When item 6 rides high while item 2 rides high too: trust item 6.</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-bullets">
+  <h2 class="ain">How to run it</h2>
+  <ul>
+   <li class="fg">The last five minutes, in the room: 90%+ response. “Later by email” donates your best window to nobody.</li>
+   <li class="fg">The anonymity promise, said out loud in your own words, before the cards go out.</li>
+   <li class="fg">Read item 2 and the open answers BEFORE any averaging. Averages are the last stop, not the first.</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-three">
+  <h2 class="ain">The 60-second read</h2>
+  <p class="tq fg">1.  Item 2 at 3.5+? Below 3.0, the session was theater — and the design is the suspect.</p>
+  <p class="tq fg">2.  Countable Monday commitments — concrete verbs, or vibes?</p>
+  <p class="tq fg">3.  An obstacle named twice is a finding. Named three times: a redesign order.</p>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-bullets">
+  <h2 class="ain">The follow-up is the survey’s second half</h2>
+  <ul>
+   <li class="fg">Every concrete Q7 answer becomes one 30-day line: “You said you would — how did it go?”</li>
+   <li class="fg">No tooling, one message, honest replies: the cheapest Level 3 check in existence.</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-quote">
+  <p class="q fg">Numbers tell you where to look.</p>
+  <p class="q qmid fg">The open answers tell you what happened.</p>
+  <p class="q fg">Report the lowest item, always.</p>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+<section class="slide s-title">
+  <h1 class="ain" style="visibility:hidden">.</h1>
+  <p class="sub ain d1">Print the cards · keep five protected minutes · read item 2 first</p>
+  <p class="tline fg">A survey that can tell you what to fix is worth the five minutes it costs the agenda.</p>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<section class="slide s-close">
+  <h2>Take this folder with you</h2>
+  <div class="qrslot" id="qrslot">
+    <a class="wslink" href="https://workshopskill.com/en/activities/post-training-survey/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <rect x="5" y="5" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="25" y="5" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="5" y="25" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </a><p>Scan for the digital edition — the printable kit, the live form and the agent file. <em>Swap this href for your own QRCode-AI code or FormLM link.</em></p>
+  </div>
+<span class="foot"><span>WorkshopSkill · Post-Training Survey — Slide Deck · CC BY 4.0</span></span>
+</section>
+</main>
+
+<div id="drawer">
+  <div><h4>NOW</h4><div class="dnote" id="dNote"></div></div>
+  <div><h4>NEXT</h4><div class="dnext" id="dNext"></div></div>
+  <div class="tbox"><h4>RUN CLOCK</h4><div class="tbig" id="tBig">00:00</div>
+    <div class="alloc" id="tAlloc"></div>
+    <div class="tbtns"><button id="tPlay" type="button">Start</button>
+      <button id="tReset" type="button">Reset</button></div></div>
+  <div class="kcol"><h4>KEYS</h4><kbd>S</kbd> drawer · <kbd>B</kbd> house mode · <kbd>T</kbd> timer<br><kbd>N</kbd> note</div>
+</div>
+<div id="ring"><svg width="150" height="150" viewBox="0 0 60 60">
+  <circle cx="30" cy="30" r="25" fill="none" stroke="#4A453E" stroke-width="4"/>
+  <circle id="ringArc" cx="30" cy="30" r="25" fill="none" stroke="#C0392B" stroke-width="4" transform="rotate(-90 30 30)"/>
+  <text x="30" y="34" text-anchor="middle" id="ringNum">60</text></svg></div>
+
+<div id="footqr"><a class="wslink" href="https://workshopskill.com/en/activities/post-training-survey/" target="_blank" rel="noopener" aria-label="digital edition QR"></a></div>
+<div class="hud"><span class="pno" id="pno"></span></div>
+<div id="hint">← → turn · Space next point · F fullscreen · N speaker notes · S presenter drawer · B house mode · T round timer</div>
+<div id="spk"></div>
+<div id="prog"><span id="bar"></span></div>
+<script type="application/json" id="notes-data">["Name the villain by its good name: the smile sheet. Trainers all nod.", "Three seconds. Someone in the room is holding a report like that right now.", "Do not mock Level 1 — it is real data, just not enough data.", "Point at the cards while listing the constructs.", "The lie-detector slide is the one sponsors remember. Slow down here.", "The five protected minutes: promise them, deliver them, collect at the door.", "Run the read live if you have last cycle's anonymized sheet.", "This is the cheapest Level 3 check in existence — say \"cheap\" on purpose.", "The quote slide is reporting discipline, not a slogan. Read it that way out loud.", "End on the promise you opened with: answers that outlive the applause."]</script>
+<script>
+(function(){
+var slides=[].slice.call(document.querySelectorAll('.slide'));
+var bar=document.getElementById('bar'),pno=document.getElementById('pno'),
+    spk=document.getElementById('spk'),hint=document.getElementById('hint');
+var notes=JSON.parse(document.getElementById('notes-data').textContent);
+var cur=0,fi=0,spkOn=false,t0=Date.now();
+function frs(i){return slides[i].querySelectorAll('.fg');}
+function hud(){
+  bar.style.width=((cur+1)/slides.length*100)+'%';
+  pno.textContent=(cur+1)+' / '+slides.length;
+  if(spkOn)spk.textContent=notes[cur];
+}
+function show(i){
+  if(i<0||i>=slides.length)return;
+  slides[cur].classList.remove('act');
+  cur=i;
+  var f=frs(cur);
+  for(var k=0;k<f.length;k++)f[k].classList.remove('on');
+  fi=0;slides[cur].classList.add('act');hud();
+  try{history.replaceState(null,'','#'+(cur+1));}catch(e){}
+}
+function next(){
+  var f=frs(cur);
+  if(fi<f.length){f[fi++].classList.add('on');}
+  else if(cur<slides.length-1){show(cur+1);}
+}
+function prev(){
+  var f=frs(cur);
+  if(fi>0){f[--fi].classList.remove('on');}
+  else if(cur>0){show(cur-1);}
+}
+function fs(){
+  if(document.fullscreenElement){document.exitFullscreen();}
+  else{document.documentElement.requestFullscreen();}
+}
+function nkey(){
+  spkOn=!spkOn;
+  spk.style.display=spkOn?'block':'none';
+  if(spkOn)spk.textContent=notes[cur];
+}
+document.addEventListener('keydown',function(e){
+  var k=e.key;
+  if(k==='ArrowRight'||k===' '||k==='PageDown'||k==='ArrowDown'){e.preventDefault();next();}
+  else if(k==='ArrowLeft'||k==='PageUp'||k==='ArrowUp'){e.preventDefault();prev();}
+  else if(k==='Home'){show(0);}
+  else if(k==='End'){show(slides.length-1);}
+  else if(k==='f'||k==='F'){fs();}
+  else if(k==='n'||k==='N'){nkey();}
+});
+var tx=null;
+document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+document.addEventListener('touchend',function(e){
+  if(tx===null)return;
+  var dx=e.changedTouches[0].clientX-tx;
+  if(Math.abs(dx)>50){dx<0?next():prev();}
+  tx=null;
+},{passive:true});
+document.addEventListener('click',function(e){
+  if(e.target.closest('a'))return;
+  if(Date.now()-t0<400)return;
+  e.clientX>window.innerWidth/2?next():prev();
+});
+var h=parseInt((location.hash||'').slice(1),10);
+show(isNaN(h)?0:h-1);
+setTimeout(function(){if(hint)hint.style.opacity='0';},4500);
+})();
+</script>
+<script>
+// Minimal QR encoder — byte mode, ECC level L, versions 1..5 (single RS block, <=106 bytes).
+// Browser + Node compatible. Used by the Advantage Compass deck (runtime) and build scripts (node).
+(function (root, factory) {
+  if (typeof module === "object" && module.exports) module.exports = factory();
+  else root.QRGen = factory();
+})(typeof self !== "undefined" ? self : this, function () {
+  "use strict";
+  // version -> {data: data codewords, ecc: ECC codewords} for level L
+  var CAP = { 1: [19, 7], 2: [34, 10], 3: [55, 15], 4: [80, 20], 5: [108, 26] };
+  var ALIGN = { 1: [], 2: [18], 3: [22], 4: [26], 5: [30] };
+  // GF(256) tables, primitive polynomial 0x11D
+  var EXP = new Uint8Array(512), LOG = new Uint8Array(256);
+  (function () { var x = 1; for (var i = 0; i < 255; i++) { EXP[i] = x; LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11D; } for (var j = 255; j < 512; j++) EXP[j] = EXP[j - 255]; })();
+  function gmul(a, b) { return (a === 0 || b === 0) ? 0 : EXP[LOG[a] + LOG[b]]; }
+  function rsGenerator(deg) {
+    var poly = [1];
+    for (var i = 0; i < deg; i++) {
+      var next = new Array(poly.length + 1).fill(0);
+      for (var j = 0; j < poly.length; j++) {
+        next[j] ^= poly[j];                       // * x
+        next[j + 1] ^= gmul(poly[j], EXP[i]);     // * a^i
+      }
+      poly = next;
+    }
+    return poly;
+  }
+  function rsEncode(data, eccLen) {
+    var gen = rsGenerator(eccLen), res = new Uint8Array(eccLen);
+    for (var i = 0; i < data.length; i++) {
+      var factor = data[i] ^ res[0];
+      res.copyWithin(0, 1); res[eccLen - 1] = 0;
+      for (var j = 0; j < eccLen; j++) res[j] ^= gmul(gen[j + 1], factor);
+    }
+    return res;
+  }
+  // bytes -> bit array
+  function buildBits(bytes, dataCw) {
+    var bits = [];
+    function put(val, len) { for (var i = len - 1; i >= 0; i--) bits.push((val >>> i) & 1); }
+    put(4, 4); put(bytes.length, 8);
+    for (var i = 0; i < bytes.length; i++) put(bytes[i], 8);
+    var cap = dataCw * 8;
+    put(0, Math.min(4, cap - bits.length));           // terminator
+    while (bits.length % 8) bits.push(0);             // byte align
+    var pads = [0xEC, 0x11], pi = 0;
+    while (bits.length < cap) put(pads[pi++ & 1], 8); // pad
+    var cw = new Uint8Array(dataCw);
+    for (var b = 0; b < dataCw; b++) { var v = 0; for (var j = 0; j < 8; j++) v = (v << 1) | bits[b * 8 + j]; cw[b] = v; }
+    return cw;
+  }
+  function maskFn(m, r, c) {
+    switch (m) {
+      case 0: return (r + c) % 2 === 0; case 1: return r % 2 === 0; case 2: return c % 3 === 0;
+      case 3: return (r + c) % 3 === 0; case 4: return ((r >> 1) + Math.floor(c / 3)) % 2 === 0;
+      case 5: return (r * c) % 2 + (r * c) % 3 === 0; case 6: return ((r * c) % 2 + (r * c) % 3) % 2 === 0;
+      default: return ((r + c) % 2 + (r * c) % 3) % 2 === 0;
+    }
+  }
+  function bch15(data) { // data: 5 bits
+    var v = data << 10;
+    for (var i = 14; i >= 10; i--) if ((v >>> i) & 1) v ^= 0x537 << (i - 10); // 0b10100110111
+    return ((data << 10) | v) ^ 0x5412; // XOR 101010000010010
+  }
+  function encode(text) {
+    var bytes = []; for (var i = 0; i < text.length; i++) { var cp = text.codePointAt(i);
+      if (cp < 0x80) bytes.push(cp); else if (cp < 0x800) { bytes.push(0xC0 | cp >> 6, 0x80 | cp & 63); }
+      else if (cp < 0x10000) { bytes.push(0xE0 | cp >> 12, 0x80 | (cp >> 6) & 63, 0x80 | cp & 63); }
+      else { i++; bytes.push(0xF0 | cp >> 18, 0x80 | (cp >> 12) & 63, 0x80 | (cp >> 6) & 63, 0x80 | cp & 63); } }
+    var ver = 0; for (var v = 1; v <= 5; v++) if (bytes.length + 2 <= CAP[v][0]) { ver = v; break; }
+    if (!ver) throw new Error("QRGen: payload too long (max ~104 bytes)");
+    var size = 17 + ver * 4, dataCw = CAP[ver][0], eccCw = CAP[ver][1];
+    var mod = [], fn = [];
+    for (var r = 0; r < size; r++) { mod.push(new Array(size).fill(false)); fn.push(new Array(size).fill(false)); }
+    function set(x, y, d) { if (x >= 0 && y >= 0 && x < size && y < size) { mod[y][x] = d; fn[y][x] = true; } }
+    // finder + separator (7x7 pattern + 1 cell light separator)
+    function finder(cx, cy) {
+      for (var yy = -4; yy <= 4; yy++) for (var xx = -4; xx <= 4; xx++) {
+        var dd = Math.max(Math.abs(xx), Math.abs(yy));
+        if (dd > 4) continue;
+        var px = cx + xx, py = cy + yy;
+        if (px < 0 || py < 0 || px >= size || py >= size) continue;
+        mod[py][px] = (dd < 2) || (dd === 3); fn[py][px] = true;
+      }
+    }
+    finder(3, 3); finder(size - 4, 3); finder(3, size - 4);
+    // timing
+    for (var t = 8; t < size - 8; t++) { if (!fn[6][t]) { mod[6][t] = t % 2 === 0; fn[6][t] = true; } if (!fn[t][6]) { mod[t][6] = t % 2 === 0; fn[t][6] = true; } }
+    // alignment
+    ALIGN[ver].forEach(function (c) {
+      for (var dy = -2; dy <= 2; dy++) for (var dx = -2; dx <= 2; dx++)
+        set(c + dx, c + dy, Math.max(Math.abs(dx), Math.abs(dy)) !== 1);
+    });
+    // dark module + format reserve
+    set(8, size - 8, true);
+    for (var k = 0; k <= 8; k++) { if (k !== 6) { fn[8][k] = true; fn[k][8] = true; } }
+    for (var a = 0; a < 8; a++) fn[8][size - 1 - a] = true;
+    for (var b2 = 0; b2 < 8; b2++) fn[size - 1 - b2][8] = true;
+    // codewords
+    var cw = buildBits(bytes, dataCw), ecc = rsEncode(cw, eccCw);
+    var seq = []; for (var q = 0; q < dataCw; q++) seq.push(cw[q]); for (var e = 0; e < eccCw; e++) seq.push(ecc[e]);
+    var bits = []; seq.forEach(function (by) { for (var i2 = 7; i2 >= 0; i2--) bits.push((by >>> i2) & 1); });
+    // draw zigzag (direction derived per column pair)
+    var bi = 0, total = bits.length;
+    for (var col = size - 1; col >= 1; col -= 2) {
+      if (col === 6) col = 5;
+      for (var vert = 0; vert < size; vert++) {
+        for (var j = 0; j < 2; j++) {
+          var x = col - j;
+          var up = ((col + 1) & 2) === 0;
+          var y = up ? size - 1 - vert : vert;
+          if (!fn[y][x] && bi < total) { mod[y][x] = !!bits[bi]; bi++; }
+        }
+      }
+    }
+    function applyMask(m) { for (var y = 0; y < size; y++) for (var x = 0; x < size; x++) if (!fn[y][x] && maskFn(m, y, x)) mod[y][x] = !mod[y][x]; }
+    function drawFormat(m) {
+      var f = bch15((1 << 3) | m); // ECL L = 01
+      function bit(i) { return ((f >> i) & 1) === 1; }
+      function setF(x, y, v) { mod[y][x] = v; }
+      for (var i3 = 0; i3 <= 5; i3++) setF(8, i3, bit(i3));
+      setF(8, 7, bit(6)); setF(8, 8, bit(7)); setF(7, 8, bit(8));
+      for (var j3 = 9; j3 <= 14; j3++) setF(14 - j3, 8, bit(j3));
+      for (var j4 = 0; j4 <= 7; j4++) setF(size - 1 - j4, 8, bit(j4));
+      for (var j5 = 8; j5 <= 14; j5++) setF(8, size - 15 + j5, bit(j5));
+      setF(8, size - 8, true);
+    }
+    function penalty() {
+      var p = 0;
+      function runs(line) { var n = 0, run = 1; for (var i = 1; i < line.length; i++) { if (line[i] === line[i - 1]) run++; else { if (run >= 5) n += 3 + run - 5; run = 1; } } if (run >= 5) n += 3 + run - 5; return n; }
+      for (var r2 = 0; r2 < size; r2++) { p += runs(mod[r2].slice()); var colv = []; for (var c3 = 0; c3 < size; c3++) colv.push(mod[c3][r2]); p += runs(colv); }
+      for (var r3 = 0; r3 < size - 1; r3++) for (var c4 = 0; c4 < size - 1; c4++) { var v2 = mod[r3][c4]; if (v2 === mod[r3][c4 + 1] && v2 === mod[r3 + 1][c4] && v2 === mod[r3 + 1][c4 + 1]) p += 3; }
+      var pat = [true, false, true, true, true, false, true, false, false, false, false];
+      function finderLike(line) { var n = 0; for (var i = 0; i + 11 <= line.length; i++) { var f = 0, rv = 0; for (var j = 0; j < 11; j++) { if (line[i + j] === pat[j]) f++; if (line[i + j] === pat[10 - j]) rv++; } if (f === 11 || rv === 11) n += 40; } return n; }
+      for (var r4 = 0; r4 < size; r4++) { var rowv = mod[r4].slice(); var colv2 = []; for (var c5 = 0; c5 < size; c5++) colv2.push(mod[c5][r4]); p += finderLike(rowv) + finderLike(colv2); }
+      var dark = 0; for (var r5 = 0; r5 < size; r5++) for (var c6 = 0; c6 < size; c6++) if (mod[r5][c6]) dark++;
+      var pct = dark * 100 / (size * size); var k5 = Math.floor(Math.abs(pct - 50) / 5); p += k5 * 10;
+      return p;
+    }
+    var best = 0, bestP = Infinity;
+    for (var m = 0; m < 8; m++) { applyMask(m); drawFormat(m); var pp = penalty(); if (pp < bestP) { bestP = pp; best = m; } applyMask(m); }
+    applyMask(best); drawFormat(best);
+    return { size: size, modules: mod };
+  }
+  function toSVG(text, opts) {
+    opts = opts || {}; var q = encode(text), m = q.modules, s = q.size, sc = opts.scale || 4, mg = opts.margin == null ? 4 : opts.margin;
+    var dim = (s + mg * 2) * sc, d = "";
+    for (var r = 0; r < s; r++) for (var c = 0; c < s; c++) if (m[r][c]) d += "M" + ((c + mg) * sc) + " " + ((r + mg) * sc) + "h" + sc + "v" + sc + "h-" + sc + "z";
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + dim + ' ' + dim + '" width="' + dim + '" height="' + dim + '" shape-rendering="crispEdges"><rect width="' + dim + '" height="' + dim + '" fill="' + (opts.bg || "#ffffff") + '"/><path d="' + d + '" fill="' + (opts.fg || "#1C2733") + '"/></svg>';
+  }
+  return { encode: encode, toSVG: toSVG };
+});
+
+</script>
+<script>
+(function(){
+"use strict";
+var slides=[].slice.call(document.querySelectorAll('.slide'));
+var notes=[];try{notes=JSON.parse(document.getElementById('notes-data').textContent);}catch(e){}
+var alloc=[1, 2, 2, 1, 2, 1, 1, 1, 1, 1];
+var drawer=document.getElementById('drawer'),ring=document.getElementById('ring');
+var cur=0,elapsed=0,slideElapsed=0,running=false,iv=null;
+function fmt(s){var m=Math.floor(s/60),ss=s%60;return (m<10?'0':'')+m+':'+(ss<10?'0':'')+ss;}
+function curIdx(){for(var i=0;i<slides.length;i++)if(slides[i].classList.contains('act'))return i;return 0;}
+function hud(){
+  var dn=document.getElementById('dNote'),nx=document.getElementById('dNext'),al=document.getElementById('tAlloc');
+  if(dn)dn.textContent=notes[cur]||'';
+  if(nx){var h=slides[cur+1]?slides[cur+1].querySelector('h1,h2,.ql,p'):null;
+    nx.innerHTML=slides[cur+1]?'<b>'+(cur+2)+'</b> · '+(h?h.textContent.trim().slice(0,60):'')+'<br>'+(notes[cur+1]||''):'—';}
+  if(al){var a=alloc[cur]||1;var over=slideElapsed>a*60;
+    al.textContent=fmt(slideElapsed)+' / '+a+' min';al.className='alloc'+(over?' over':'');}
+  var big=document.getElementById('tBig');if(big)big.textContent=fmt(elapsed);
+}
+function tick(){elapsed++;slideElapsed++;hud();}
+function tToggle(){running=!running;var b=document.getElementById('tPlay');
+  if(b)b.textContent=running?"Pause":"Start";
+  if(running){if(!iv)iv=setInterval(tick,1000);}else if(iv){clearInterval(iv);iv=null;}}
+function tReset(){elapsed=0;slideElapsed=0;running=false;if(iv){clearInterval(iv);iv=null;}
+  var b=document.getElementById('tPlay');if(b)b.textContent="Start";hud();}
+function ringRun(){var arc=document.getElementById('ringArc'),num=document.getElementById('ringNum');
+  if(ring.classList.contains('run'))return;ring.classList.add('run');
+  arc.style.transition='none';arc.style.strokeDashoffset=0;arc.getBoundingClientRect();
+  arc.style.transition='stroke-dashoffset 60s linear';arc.style.strokeDashoffset=157;
+  var n=60;num.textContent=n;var ivr=setInterval(function(){n--;num.textContent=n>0?n:'0';
+    if(n<=0){clearInterval(ivr);setTimeout(function(){ring.classList.remove('run');arc.style.strokeDashoffset=0;},800);}},1000);}
+document.addEventListener('keydown',function(e){
+  var t=e.target;if(t.tagName==='INPUT'||t.tagName==='BUTTON')return;
+  var k=e.key;
+  if(k==='s'||k==='S'){drawer.classList.toggle('open');hud();}
+  else if(k==='b'||k==='B'){document.body.classList.toggle('big');}
+  else if(k==='t'||k==='T'){ringRun();}
+});
+document.addEventListener('click',function(e){
+  if(e.target.closest('a,button,#drawer,#ring'))return;
+  setTimeout(function(){var n=curIdx();if(n!==cur){cur=n;slideElapsed=0;}hud();},0);
+});
+function mkQR(a){if(!a)return;function paint(u){a.innerHTML=QRGen.toSVG(u,{scale:3,margin:2,fg:'#2B2926',bg:'#FAF7F0'});}
+  try{paint(a.href);}catch(e){try{var u=new URL(a.href);paint(u.origin+u.pathname);}catch(e2){}}}
+[].slice.call(document.querySelectorAll('#qrslot a, #footqr a')).forEach(mkQR);
+document.addEventListener('fullscreenchange',function(){document.body.classList.toggle('fs',!!document.fullscreenElement);});
+var pb=document.getElementById('tPlay'),rb=document.getElementById('tReset');
+if(pb)pb.addEventListener('click',tToggle);if(rb)rb.addEventListener('click',tReset);
+var rb2=document.getElementById('ringbtn');if(rb2)rb2.addEventListener('click',function(e){e.stopPropagation();ringRun();});
+setTimeout(function(){cur=curIdx();hud();},0);
+})();
+
+</script>
+</body>
+</html>

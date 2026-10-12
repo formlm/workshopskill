@@ -1,0 +1,82 @@
+{
+  "id": "ws-activity-blanket-drop",
+  "name": "Blanket Drop",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "person",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "bd-02"
+    ],
+    "range": [
+      4,
+      20
+    ],
+    "reported": [
+      "person_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report room-level deltas only; individual answers stay private — the free point is the joke, not a grade."
+  },
+  "timing": {
+    "pre_minutes": 1,
+    "activity_minutes": 10,
+    "post_minutes": 1
+  },
+  "language": "en",
+  "description": "One-minute pre/post measure for the Blanket Drop name game. Scores per person: how much of the room's names you actually own — retrieval under pressure is the mechanism.",
+  "instructions": {
+    "pre": "Before the teams split. Each person answers alone, about their normal week — the usual, not the game.",
+    "post": "Immediately after the light debrief. Same items, now answered about this game."
+  },
+  "items": [
+    {
+      "id": "bd-01",
+      "construct": "name-recall",
+      "pre_text": "I can put names to most faces I work with.",
+      "post_text": "A name I learned today came back to me under pressure.",
+      "reverse": false
+    },
+    {
+      "id": "bd-02",
+      "construct": "name-dodge",
+      "pre_text": "When a name escapes me, I avoid using one at all.",
+      "post_text": "Today nobody dodged: every near-miss got a second try.",
+      "reverse": true
+    },
+    {
+      "id": "bd-03",
+      "construct": "pressure-recall",
+      "pre_text": "Mild time pressure helps me recall things.",
+      "post_text": "When the blanket dropped, my recall got sharper, not frozen.",
+      "reverse": false
+    },
+    {
+      "id": "bd-04",
+      "construct": "name-use",
+      "pre_text": "I greet colleagues with their name out loud.",
+      "post_text": "Before the break, I used a new name out loud, to the person.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Blanket Drop — name recall delta",
+    "sections": [
+      "Room-level item deltas",
+      "Construct deltas with item-level evidence",
+      "One suggested name to use out loud per participant, from the largest positive delta"
+    ]
+  }
+}

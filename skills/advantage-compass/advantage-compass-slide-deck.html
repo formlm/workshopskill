@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Advantage Compass Kit 2.0.0 — Slide Deck Studio">
+<title>The Advantage Compass — Slide Deck</title>
+<!--
+  ══════════════════════════════════════════════════════════════════
+  THE ADVANTAGE COMPASS — PRESENTATION DECK (v2.0.0)
+  A stage tool, not a document: presenter drawer, run-of-show timer,
+  live audit device, silence timer, original compass artwork.
+  ══════════════════════════════════════════════════════════════════
+  WHITE LABEL — exactly three replacements to make this deck yours:
+  1. LOGO   : <img class="logo" src=""> — set src to your logo file
+              (ship it next to this file), remove the display:none style.
+  2. BRAND  : the :root block — one CSS variable per color, edit in place.
+  3. LINKS  : search for "wslink" — three spots: footer site link,
+              theory link, QR slot href. Replace with your own
+              (e.g. your QR code URL or your FormLM report link).
+  Keys: ← → / tap = page · Space = next point · F = fullscreen ·
+        N = quick note · S = presenter drawer · B = house mode ·
+        T = silence timer (three-questions slide).
+  This file is yours (CC BY 4.0 — keep the footer attribution line).
+  ══════════════════════════════════════════════════════════════════
+-->
+<style>
+:root{
+  /* — one palette, one line per color (white-label spot 2) — */
+  --paper:#F7F2E6;        /* parchment stage          */
+  --paper2:#EFE7D5;       /* deepened parchment       */
+  --ink:#1C2733;          /* naval ink                */
+  --navy:#1E3A52;         /* chart blue               */
+  --brass:#A8802E;        /* instrument brass         */
+  --gray:#5C6470;         /* marginalia               */
+  --rule:#C8B98F;         /* hairline on paper        */
+  --q1:#C99A2E;           /* golden track             */
+  --q2:#2E7F7C;           /* learning zone            */
+  --q3:#BF5B2B;           /* firefighting             */
+  --q4:#5E5468;           /* burnout trap             */
+  --fsz:1;                /* house-mode scale         */
+}
+html,body{margin:0;height:100%;background:#10161C;color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif CJK SC','Noto Serif CJK TC',
+  'Songti SC','Songti TC',serif;}
+body.big{--fsz:1.12;}
+#deck{position:relative;height:100vh;overflow:hidden;}
+.slide{position:absolute;inset:0;display:none;background:
+  radial-gradient(120% 90% at 50% 0%,var(--paper) 62%,var(--paper2) 100%);
+  padding:8.6vh 7vw 11.4vh;box-sizing:border-box;flex-direction:column;}
+.slide.act{display:flex;}
+.slide::before{content:'';position:absolute;top:4.6vh;left:7vw;width:110px;height:2px;
+  background:linear-gradient(90deg,var(--brass),transparent);}
+.slide::after{content:'';position:absolute;top:4.6vh;left:calc(7vw + 104px);
+  width:9px;height:9px;border-radius:50%;background:var(--brass);}
+.slide>*{min-height:0;}
+.foot{position:absolute;left:7vw;right:7vw;bottom:3.2vh;padding-top:8px;
+  border-top:1px solid var(--rule);font-size:clamp(9px,calc(1.1vw*var(--fsz)),13px);
+  color:var(--gray);display:flex;justify-content:space-between;gap:16px;
+  letter-spacing:.02em;}
+.foot a{color:var(--gray);text-decoration:none;}
+.foot a:hover{text-decoration:underline;}
+.logo{position:absolute;top:4vh;right:7vw;max-height:6vh;max-width:16vw;}
+/* — entrances — */
+@keyframes ain{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.ain{opacity:0;animation:ain .55s ease-out forwards;}
+.d1{animation-delay:.18s}.d2{animation-delay:.36s}
+.fg{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease;}
+.fg.on{opacity:1;transform:none;}
+/* — slide 1 · title with compass rose — */
+.s-title{justify-content:center;text-align:center;align-items:center;}
+.rose{width:min(24vh,26vw);height:min(24vh,26vw);margin:0 auto 2.6vh;}
+.s-title h1{font-size:clamp(30px,calc(6.6vw*var(--fsz)),70px);margin:0 0 2.6vh;
+  line-height:1.1;letter-spacing:.015em;color:var(--navy);}
+.s-title .sub{font-size:clamp(14px,calc(2.2vw*var(--fsz)),24px);color:var(--brass);
+  margin:0 0 4.6vh;letter-spacing:.12em;}
+.s-title .tline{max-width:62vw;font-size:clamp(14px,calc(2.1vw*var(--fsz)),23px);
+  line-height:1.6;border-top:1px solid var(--rule);padding-top:3.2vh;color:var(--gray);}
+#needle{transform-origin:100px 100px;animation:hunt 14s cubic-bezier(.45,0,.55,1) infinite alternate;}
+@keyframes hunt{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
+/* — question slides — */
+.s-question{justify-content:center;align-items:center;text-align:center;}
+.s-question .ql{font-size:clamp(22px,calc(4.6vw*var(--fsz)),50px);font-weight:700;
+  line-height:1.3;max-width:76vw;margin:0 0 3.4vh;color:var(--navy);}
+/* — bullets — */
+.s-bullets h2,.s-grid h2,.s-icons h2,.s-demo h2,.s-three h2,.s-audit h2{
+  font-size:clamp(20px,calc(3.5vw*var(--fsz)),38px);margin:2.2vh 0 0;color:var(--navy);}
+.s-bullets h2{padding-bottom:1.5vh;border-bottom:2px solid var(--rule);align-self:flex-start;}
+.s-bullets ul{list-style:none;margin:4vh 0 0;padding:0;max-width:80vw;}
+.s-bullets li{font-size:clamp(15px,calc(2.3vw*var(--fsz)),25px);line-height:1.5;
+  margin-bottom:3.2vh;padding-left:2.1em;position:relative;}
+.s-bullets li::before{content:'\25B8';position:absolute;left:.2em;
+  color:var(--brass);font-size:1.1em;top:.1em;}
+.s-bullets .lead{color:var(--gray);font-style:italic;}
+.hicon{width:clamp(44px,6vw,72px);height:clamp(44px,6vw,72px);margin:1.6vh 0 0;}
+/* — slide 4 · axes: stroke-draw — */
+.axesvg{width:min(58vw,640px);margin:3.4vh auto 0;display:block;}
+.axesvg .draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .8s ease;}
+.axesvg .fg.on .draw{stroke-dashoffset:0;}
+.axlab{font-size:15px;fill:var(--gray);font-family:Georgia,serif;}
+.axname{font-size:19px;fill:var(--navy);font-weight:700;font-family:Georgia,serif;}
+/* — slide 5 · compass dial — */
+.dialwrap{flex:1;position:relative;margin-top:1vh;display:flex;align-items:center;justify-content:center;}
+.dial{width:min(56vh,52vw,520px);height:min(56vh,52vw,520px);}
+.dial .wedge{opacity:0;transform:scale(.92);transform-origin:200px 200px;
+  transition:opacity .5s ease,transform .5s cubic-bezier(.2,1.4,.4,1);}
+.dial .wedge.on{opacity:1;transform:none;}
+.dlab{position:absolute;font-size:clamp(11px,1.5vw,16px);color:var(--gray);letter-spacing:.14em;}
+.qname{position:absolute;text-align:center;font-size:clamp(13px,calc(1.9vw*var(--fsz)),21px);
+  font-weight:700;line-height:1.25;}
+.qname small{display:block;font-weight:400;color:var(--gray);font-size:.72em;margin-top:.3em;}
+.qname.a{left:1%;top:8%;max-width:27%;color:var(--q1);}
+.qname.b{right:1%;top:8%;max-width:27%;color:var(--q2);}
+.qname.c{left:1%;bottom:5%;max-width:27%;color:var(--q3);}
+.qname.d{right:1%;bottom:5%;max-width:27%;color:var(--q4);}
+/* — slide 9 · distortion cards — */
+.s-icons .irow{display:grid;grid-template-columns:repeat(4,1fr);gap:2vw;margin:4vh 4vw 0;}
+.icard{border:1px solid var(--rule);background:rgba(255,255,255,.4);padding:2vh 1.2vw;
+  text-align:center;font-size:clamp(11px,calc(1.45vw*var(--fsz)),16px);line-height:1.4;}
+.icard b{display:block;color:var(--navy);font-size:1.12em;margin:.8vh 0;}
+.icard svg{width:44px;height:44px;}
+/* — demo table — */
+.dtab{border-collapse:collapse;margin:3.6vh auto 0;width:min(64vw,720px);}
+.dtab th{font-size:clamp(10px,1.3vw,14px);color:var(--brass);font-weight:400;
+  text-align:left;padding:0 10px 1.2vh;border-bottom:1px solid var(--rule);letter-spacing:.08em;}
+.dtab td{padding:2vh 10px;border-bottom:1px solid var(--rule);
+  font-size:clamp(13px,calc(1.9vw*var(--fsz)),21px);}
+.dtab .wline{width:34%;border-bottom:2.5px solid var(--navy);height:1.1em;}
+.dtab .hh{color:var(--gray);font-size:clamp(11px,1.5vw,16px);text-align:right;white-space:nowrap;}
+.dnote{margin:3.6vh 0 0;text-align:center;color:var(--gray);
+  font-size:clamp(12px,calc(1.8vw*var(--fsz)),19px);}
+/* — slide 11 · live audit device — */
+.s-audit .awrap{display:grid;grid-template-columns:minmax(300px,44vw) 1fr;gap:3vw;
+  align-items:start;margin:3vh 3vw 0;}
+.arow{display:grid;grid-template-columns:1.2em 1fr auto auto;gap:.7vw;align-items:center;
+  margin-bottom:2vh;font-size:clamp(12px,calc(1.6vw*var(--fsz)),18px);}
+.adot{width:.85em;height:.85em;border-radius:50%;}
+.astep{display:flex;align-items:center;gap:6px;}
+.astep button{width:1.9em;height:1.9em;border:1px solid var(--navy);background:transparent;
+  color:var(--navy);font-size:1em;border-radius:3px;cursor:pointer;font-family:inherit;}
+.astep button:hover{background:var(--navy);color:var(--paper);}
+.astep input{width:3.2em;text-align:center;font:inherit;border:0;border-bottom:2px solid var(--rule);
+  background:transparent;color:var(--navy);}
+.abar{height:10px;background:var(--paper2);border:1px solid var(--rule);position:relative;width:8em;}
+.abar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--qg, var(--brass));
+  transition:width .4s ease;}
+.achart{border:1px solid var(--rule);padding:2vh 1.4vw;background:rgba(255,255,255,.45);}
+.achart svg{width:100%;height:auto;display:block;max-height:52vh;}
+.verdict{margin:1.6vh 0 0;min-height:2.6em;text-align:center;font-size:clamp(12px,calc(1.7vw*var(--fsz)),19px);
+  color:var(--gray);font-style:italic;}
+.verdict.bad{color:var(--q3);font-style:normal;font-weight:700;}
+.printonly{display:none;}
+/* — slide 12 · three questions + silence ring — */
+.s-three{justify-content:center;}
+.s-three h2{margin:0 0 3.6vh;}
+.s-three .tq{font-size:clamp(15px,calc(2.6vw*var(--fsz)),29px);font-weight:700;
+  line-height:1.45;max-width:78vw;margin:0 0 3.4vh;color:var(--navy);}
+#ringbtn{margin-top:1vh;align-self:flex-start;font:inherit;cursor:pointer;
+  border:1.5px solid var(--brass);color:var(--brass);background:transparent;
+  padding:.6vh 1.4vw;border-radius:2em;font-size:clamp(11px,1.5vw,16px);}
+#ringbtn:hover{background:var(--brass);color:var(--paper);}
+#ring{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9;
+  display:none;background:rgba(28,39,51,.94);border-radius:50%;padding:2.4vh;}
+#ring.run{display:block;}
+#ringArc{stroke-dasharray:157;stroke-dashoffset:0;}
+#ring text{fill:#F7F2E6;font-family:Georgia,serif;font-size:22px;}
+/* — quote / closing — */
+.s-quote{justify-content:center;align-items:center;text-align:center;}
+.s-quote .q{font-size:clamp(15px,calc(2.6vw*var(--fsz)),29px);line-height:1.5;
+  max-width:74vw;margin:0 0 3vh;}
+.s-quote .qmid{font-weight:700;color:var(--q3);}
+.s-quote .qmid.on{animation:stamp .42s cubic-bezier(.2,1.5,.4,1) both;}
+@keyframes stamp{from{opacity:0;transform:scale(1.6) rotate(-4deg)}
+  to{opacity:1;transform:scale(1) rotate(0)}}
+.qrslot{display:flex;align-items:center;gap:1.2vw;margin:2.6vh auto 0;border:1px dashed var(--brass);
+  padding:1.2vh 1.4vw;text-align:left;}
+.qrslot svg{width:96px;height:96px;flex:none;}
+.qrslot p{margin:0;font-size:clamp(11px,1.5vw,16px);color:var(--gray);max-width:34vw;line-height:1.45;}
+/* — HUD — */
+.hud{position:fixed;right:2.2vw;top:3vh;z-index:5;font-size:clamp(10px,1.2vw,14px);
+  color:var(--gray);display:flex;gap:8px;align-items:center;}
+.hud .pno{background:rgba(247,242,230,.9);padding:2px 10px;border:1px solid var(--rule);}
+.hud .clock{background:rgba(247,242,230,.9);padding:2px 10px;border:1px solid var(--rule);
+  color:var(--navy);font-variant-numeric:tabular-nums;}
+.hud .clock.over{color:var(--q3);border-color:var(--q3);}
+body.big .hud,body.big #hint{display:none;}
+#hint{position:fixed;left:50%;transform:translateX(-50%);bottom:1.2vh;font-size:clamp(10px,1.2vw,14px);
+  color:var(--gray);z-index:5;transition:opacity 1s ease;
+  background:rgba(247,242,230,.9);padding:2px 10px;border:1px solid var(--rule);}
+#spk{position:fixed;left:2.2vw;bottom:5vh;max-width:60vw;display:none;z-index:5;
+  font-size:clamp(11px,1.5vw,17px);color:var(--brass);background:rgba(247,242,230,.95);
+  border-left:3px solid var(--brass);padding:1.2vh 1.4vw;}
+#prog{position:fixed;left:0;bottom:0;height:3px;width:100%;background:rgba(16,22,28,.25);z-index:6;}
+#bar{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brass),var(--q1));
+  transition:width .3s ease;}
+/* — footer QR chip: visible in fullscreen/house mode — */
+#footqr{position:fixed;right:1.4vw;bottom:5.6vh;width:clamp(64px,7.5vw,104px);display:none;z-index:6;
+  background:var(--paper);border:1px solid var(--rule);padding:5px;}
+#footqr svg{width:100%;height:auto;display:block;}
+body.fs #footqr{display:block;}
+/* — presenter drawer — */
+#drawer{position:fixed;left:0;right:0;bottom:0;z-index:8;display:none;
+  background:rgba(28,39,51,.97);color:#EAE3D2;font-size:clamp(11px,1.3vw,15px);
+  border-top:2px solid var(--brass);}
+#drawer.open{display:grid;grid-template-columns:1.2fr 2fr 1.2fr .9fr;gap:1.6vw;
+  padding:1.4vh 2vw 5.6vh;}
+#drawer h4{margin:0 0 .6vh;color:var(--brass);font-size:.86em;letter-spacing:.14em;font-weight:400;}
+#drawer .dnote{font-size:1.06em;line-height:1.45;min-height:3em;}
+#drawer .dnext{color:#B9B19B;}
+#drawer .dnext b{color:#EAE3D2;}
+.tbox{text-align:center;}
+.tbig{font-size:2em;font-variant-numeric:tabular-nums;color:#F7F2E6;}
+.tbox .alloc{color:#B9B19B;font-size:.9em;margin-top:.3em;}
+.tbox .alloc.over{color:#E88A5D;}
+.tbtns{margin-top:.8vh;display:flex;gap:6px;justify-content:center;}
+.tbtns button{font:inherit;background:transparent;border:1px solid #6E7683;color:#EAE3D2;
+  padding:.2em .8em;border-radius:3px;cursor:pointer;}
+.tbtns button:hover{border-color:var(--brass);color:var(--brass);}
+.kcol{font-size:.92em;color:#B9B19B;line-height:1.7;}
+.kcol kbd{border:1px solid #6E7683;border-radius:3px;padding:0 .4em;font-family:inherit;}
+/* — reduced motion — */
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+  .ain{opacity:1;animation:none;}
+  #needle{animation:none;}
+}
+/* — print: falls back to the A4 landscape lectern edition — */
+@page{size:A4 landscape;margin:0;}
+@media print{
+  html,body{background:#fff;height:auto;}
+  #deck{height:auto;overflow:visible;}
+  .slide{position:relative;display:flex!important;width:297mm;height:209mm;
+    padding:16mm 20mm 22mm;page-break-after:always;background:var(--paper);}
+  .ain,.fg{opacity:1!important;transform:none!important;animation:none!important;}
+  .axesvg .draw{stroke-dashoffset:0;}
+  .dial .wedge{opacity:1!important;transform:none!important;}
+  .hud,#hint,#spk,#prog,#drawer,#ring,#footqr{display:none!important;}
+  .astep,.abar,#ringbtn{display:none!important;}
+  .printonly{display:block;}
+  .printonly td{white-space:nowrap;font-size:14pt;}
+  .arow{grid-template-columns:1.2em 1fr;}
+}
+</style>
+</head>
+<body>
+<img class="logo" src="" alt="" style="display:none">
+<main id="deck">
+
+<!-- 1 · title -->
+<section class="slide s-title">
+  <svg class="rose ain" viewBox="0 0 200 200" role="img" aria-label="compass rose">
+    <circle cx="100" cy="100" r="94" fill="none" stroke="var(--brass)" stroke-width="1.4"/>
+    <circle cx="100" cy="100" r="86" fill="none" stroke="var(--rule)" stroke-width=".8"/>
+    <g stroke="var(--rule)" stroke-width=".8"><g id="tk"></g></g>
+    <polygon points="100,18 108,92 100,100 92,92" fill="var(--q3)"/>
+    <polygon points="100,182 108,108 100,100 92,108" fill="var(--navy)"/>
+    <polygon points="18,100 92,92 100,100 92,108" fill="var(--navy)" opacity=".55"/>
+    <polygon points="182,100 108,92 100,100 108,108" fill="var(--navy)" opacity=".55"/>
+    <g id="needle">
+      <polygon points="100,26 106,100 100,110 94,100" fill="var(--brass)" stroke="var(--navy)" stroke-width=".8"/>
+      <polygon points="100,174 106,100 100,90 94,100" fill="var(--paper)" stroke="var(--navy)" stroke-width=".8"/>
+    </g>
+    <circle cx="100" cy="100" r="7" fill="var(--navy)"/>
+    <circle cx="100" cy="100" r="3" fill="var(--paper)"/>
+  </svg>
+  <h1 class="ain">The Advantage Compass</h1>
+  <p class="sub ain d1">A 25-MINUTE PERSONAL STRATEGY SELF-ASSESSMENT</p>
+  <p class="tline fg">Personality tests tell you who you are. This one tells you where your hours went — and where to move them next.</p>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span><a class="wslink" href="https://workshopskill.com/en" target="_blank" rel="noopener">workshopskill.com/en</a></span>
+</section>
+
+<!-- 2 · trap question -->
+<section class="slide s-question">
+  <p class="ql ain">Who here is busy all day, every day —</p>
+  <p class="ql ain d1">and would struggle to say what all that busyness is building?</p>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 3 · two kinds -->
+<section class="slide s-bullets">
+  <h2 class="ain">Two kinds of self-assessment</h2>
+  <ul>
+   <li class="fg">Tests measure traits. They label you — and a label is used once.</li>
+   <li class="fg">The Compass measures allocation. It locates you — and a map is useful every month.</li>
+   <li class="fg lead">Not “who am I” but “where do my hours actually go?”</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 4 · the axes, drawn -->
+<section class="slide s-bullets">
+  <h2 class="ain">The two axes</h2>
+  <svg class="axesvg" viewBox="0 0 620 260" role="img" aria-label="the two axes">
+    <g class="fg">
+      <line class="draw" x1="30" y1="130" x2="590" y2="130" pathLength="1" stroke="var(--navy)" stroke-width="2.4"/>
+      <polygon points="590,130 578,124 578,136" fill="var(--navy)"/>
+      <polygon points="30,130 42,124 42,136" fill="var(--navy)"/>
+      <text class="axname" x="16" y="162">Strength</text>
+      <text class="axname" x="520" y="162">Weakness</text>
+    </g>
+    <g class="fg">
+      <line class="draw" x1="310" y1="20" x2="310" y2="240" pathLength="1" stroke="var(--brass)" stroke-width="2.4"/>
+      <polygon points="310,20 304,32 316,32" fill="var(--brass)"/>
+      <text class="axname" x="322" y="30">Vision</text>
+      <text class="axname" x="322" y="246">Pain</text>
+    </g>
+    <g class="fg">
+      <circle cx="310" cy="130" r="5" fill="var(--q3)"/>
+      <text class="axlab" x="46" y="66">What feels lighter after three hours? What empties you in forty minutes?</text>
+      <text class="axlab" x="360" y="216">What you want in three years — whose emergency is due Friday?</text>
+    </g>
+  </svg>
+  <p class="dnote fg">Every block of your work sits somewhere on this cross.</p>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 5 · the dial -->
+<section class="slide s-grid">
+  <h2 class="ain">The four quadrants</h2>
+  <div class="dialwrap">
+    <svg class="dial" viewBox="0 0 400 400" role="img" aria-label="compass dial">
+      <circle cx="200" cy="200" r="196" fill="none" stroke="var(--rule)" stroke-width="1"/>
+      <circle cx="200" cy="200" r="188" fill="none" stroke="var(--brass)" stroke-width="1.2"/>
+      <path class="wedge" d="M15,200 A185,185 0 0 1 200,15 L200,125 A75,75 0 0 0 125,200 Z" fill="var(--q1)"/>
+      <path class="wedge" d="M200,15 A185,185 0 0 1 385,200 L310,200 A75,75 0 0 0 200,125 Z" fill="var(--q2)"/>
+      <path class="wedge" d="M200,385 A185,185 0 0 1 15,200 L125,200 A75,75 0 0 0 200,310 Z" fill="var(--q3)"/>
+      <path class="wedge" d="M385,200 A185,185 0 0 1 200,385 L200,310 A75,75 0 0 0 310,200 Z" fill="var(--q4)"/>
+      <line x1="200" y1="10" x2="200" y2="390" stroke="var(--paper)" stroke-width="2.4"/>
+      <line x1="10" y1="200" x2="390" y2="200" stroke="var(--paper)" stroke-width="2.4"/>
+      <text x="74" y="86" fill="#F7F2E6" font-size="30" font-weight="700">1</text>
+      <text x="300" y="86" fill="#F7F2E6" font-size="30" font-weight="700">2</text>
+      <text x="74" y="330" fill="#F7F2E6" font-size="30" font-weight="700">3</text>
+      <text x="300" y="330" fill="#F7F2E6" font-size="30" font-weight="700">4</text>
+      <polygon points="200,52 206,200 200,214 194,200" fill="var(--brass)" stroke="var(--navy)" stroke-width=".8"/>
+      <circle cx="200" cy="200" r="9" fill="var(--navy)"/><circle cx="200" cy="200" r="4" fill="var(--paper)"/>
+    </svg>
+    <span class="dlab" style="left:46%;top:-1%;">Vision</span>
+    <span class="dlab" style="left:46%;bottom:-3%;">Pain</span>
+    <span class="dlab" style="left:-1%;top:48%;">Strength</span>
+    <span class="dlab" style="right:-1%;top:48%;">Weakness</span>
+    <div class="qname a fg">The golden track<small>compounds — hour makes hour</small></div>
+    <div class="qname b fg">The learning zone<small>good enough, then stop</small></div>
+    <div class="qname c fg">The firefighting track<small>worth less every month</small></div>
+    <div class="qname d fg">The burnout trap<small>end it, don’t improve it</small></div>
+  </div>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 6 · Q1 -->
+<section class="slide s-bullets">
+  <h2 class="ain">Quadrant 1 — the golden track</h2>
+  <svg class="hicon ain" viewBox="0 0 64 64" aria-hidden="true">
+    <path d="M8 54 Q24 44 40 46 T58 34" fill="none" stroke="var(--q1)" stroke-width="2.4"/>
+    <circle cx="44" cy="18" r="9" fill="none" stroke="var(--navy)" stroke-width="2"/>
+    <g stroke="var(--q1)" stroke-width="1.8">
+      <line x1="44" y1="5" x2="44" y2="1"/><line x1="44" y1="31" x2="44" y2="35"/>
+      <line x1="31" y1="18" x2="27" y2="18"/><line x1="57" y1="18" x2="61" y2="18"/>
+      <line x1="34.5" y1="8.5" x2="31.5" y2="5.5"/><line x1="53.5" y1="27.5" x2="56.5" y2="30.5"/>
+      <line x1="53.5" y1="8.5" x2="56.5" y2="5.5"/><line x1="34.5" y1="27.5" x2="31.5" y2="30.5"/>
+    </g>
+  </svg>
+  <ul>
+   <li class="fg">Strength in service of your vision.</li>
+   <li class="fg">Hours compound: every hour makes the next hour more valuable.</li>
+   <li class="fg">Healthy share: 40%+. On a first run, most calendars hold 15% — that is information, not a verdict.</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 7 · Q3 -->
+<section class="slide s-bullets">
+  <h2 class="ain">Quadrant 3 — the firefighting track</h2>
+  <svg class="hicon ain" viewBox="0 0 64 64" aria-hidden="true">
+    <path d="M32 4 C26 18 16 24 16 38 a16 16 0 0 0 32 0 C48 24 42 20 40 12 C38 20 34 22 32 4 Z"
+      fill="none" stroke="var(--q3)" stroke-width="2.4"/>
+    <path d="M32 30 c-3 4 -6 6 -6 12 a6 6 0 0 0 12 0 c0 -6 -3 -8 -6 -12 Z" fill="var(--q3)" opacity=".8"/>
+  </svg>
+  <ul>
+   <li class="fg">Strength in service of today’s pain. Efficient, praised — worth less every month.</li>
+   <li class="fg">Firefighting is a season. A season never re-examined becomes a career.</li>
+   <li class="fg">The test question: does this work make next year easier, or harder?</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 8 · Q2 & Q4 -->
+<section class="slide s-bullets">
+  <h2 class="ain">Quadrants 2 and 4 — the edges</h2>
+  <ul>
+   <li class="fg">Q2, the learning zone: fix a weakness only until it stops blocking the golden track — good enough, then stop.</li>
+   <li class="fg">Q4, the burnout trap: costs energy, produces mediocrity, proves nothing. End it, don’t improve it.</li>
+  </ul>
+  <svg class="hicon ain" viewBox="0 0 128 48" aria-hidden="true" style="width:min(18vw,170px)">
+    <path d="M20 44 V26 M20 26 C20 16 12 14 8 14 C14 14 18 18 20 24 C22 14 28 10 36 10 C30 12 24 18 20 28"
+      fill="none" stroke="var(--q2)" stroke-width="2.2"/>
+    <path d="M62 10 a14 10 0 0 1 28 0 M66 20 a10 7 0 0 1 20 0 M70 30 a6 4 0 0 1 12 0"
+      fill="none" stroke="var(--q4)" stroke-width="2.2"/>
+    <path d="M100 26 l5 -5 M112 26 l-5 -5" stroke="var(--q4)" stroke-width="2.2"/>
+  </svg>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 9 · known distortions -->
+<section class="slide s-icons">
+  <h2 class="ain">The four known distortions</h2>
+  <div class="irow">
+    <div class="icard fg"><svg viewBox="0 0 40 40"><path d="M4 30 q8 -12 16 0 t16 0" fill="none" stroke="var(--q3)" stroke-width="2"/><circle cx="20" cy="12" r="5" fill="none" stroke="var(--navy)" stroke-width="2"/></svg><b>The competence mirage</b>Being needed feels like being valued. Ask instead: easier next year, or harder?</div>
+    <div class="icard fg"><svg viewBox="0 0 40 40"><path d="M8 6 h24 l-6 12 h6 L14 38 l4 -16 h-8 Z" fill="none" stroke="var(--q1)" stroke-width="2"/></svg><b>The humility discount</b>Strengths feel effortless — “anyone could do this.” They could not.</div>
+    <div class="icard fg"><svg viewBox="0 0 40 40"><circle cx="16" cy="16" r="9" fill="none" stroke="var(--q2)" stroke-width="2"/><path d="M23 23 L34 34 M28 30 l6 -6" stroke="var(--navy)" stroke-width="2"/></svg><b>The weakness project</b>Train a weakness only until it stops blocking the golden track.</div>
+    <div class="icard fg"><svg viewBox="0 0 40 40"><path d="M6 26 q6 -14 14 -8 q8 -10 14 4 q-6 8 -14 6 q-8 6 -14 -2Z" fill="none" stroke="var(--q4)" stroke-width="2"/></svg><b>The vision confusion</b>Pain is loud, vision is quiet. Read the calendar, not the memory.</div>
+  </div>
+  <p class="dnote fg">Name the distortion you can see in your own last two weeks.</p>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 10 · demo -->
+<section class="slide s-demo">
+  <h2 class="ain">The demo — my own two weeks</h2>
+  <table class="dtab">
+   <tr><th>Quadrant</th><th>Hours</th><th>Healthy share</th></tr>
+   <tr class="fg"><td>The golden track</td><td class="wline"></td><td class="hh">40%+</td></tr>
+   <tr class="fg"><td>The learning zone</td><td class="wline"></td><td class="hh">10–15%</td></tr>
+   <tr class="fg"><td>The firefighting track</td><td class="wline"></td><td class="hh">under 30%</td></tr>
+   <tr class="fg"><td>The burnout trap</td><td class="wline"></td><td class="hh">under 5%</td></tr>
+  </table>
+  <p class="dnote fg">Include the embarrassing share. The story is the delta, not the score.</p>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 11 · live audit device -->
+<section class="slide s-audit">
+  <h2 class="ain">The live audit — put your two weeks on the dial</h2>
+  <div class="awrap">
+    <div id="apad">
+      <div class="arow" data-q="1"><span class="adot" style="background:var(--q1)"></span><span>The golden track</span>
+        <span class="astep"><button type="button" data-d="-1">−</button><input type="number" min="0" max="80" value="0" aria-label="Q1"><button type="button" data-d="1">+</button></span>
+        <span class="abar"><i style="--qg:var(--q1)"></i></span></div>
+      <div class="arow" data-q="2"><span class="adot" style="background:var(--q2)"></span><span>The learning zone</span>
+        <span class="astep"><button type="button" data-d="-1">−</button><input type="number" min="0" max="80" value="0" aria-label="Q2"><button type="button" data-d="1">+</button></span>
+        <span class="abar"><i style="--qg:var(--q2)"></i></span></div>
+      <div class="arow" data-q="3"><span class="adot" style="background:var(--q3)"></span><span>The firefighting track</span>
+        <span class="astep"><button type="button" data-d="-1">−</button><input type="number" min="0" max="80" value="0" aria-label="Q3"><button type="button" data-d="1">+</button></span>
+        <span class="abar"><i style="--qg:var(--q3)"></i></span></div>
+      <div class="arow" data-q="4"><span class="adot" style="background:var(--q4)"></span><span>The burnout trap</span>
+        <span class="astep"><button type="button" data-d="-1">−</button><input type="number" min="0" max="80" value="0" aria-label="Q4"><button type="button" data-d="1">+</button></span>
+        <span class="abar"><i style="--qg:var(--q4)"></i></span></div>
+      <table class="dtab printonly" style="width:100%;margin:1vh 0 0"><tr>
+        <td>The golden track ___h</td><td>The learning zone ___h</td><td>The firefighting track ___h</td><td>The burnout trap ___h</td></tr></table>
+      <p class="verdict" id="verdict">Add hours per quadrant — the dial fills live.</p>
+    </div>
+    <div class="achart">
+      <svg viewBox="0 0 220 220" role="img" aria-label="allocation chart">
+        <circle cx="110" cy="110" r="84" fill="none" stroke="var(--rule)" stroke-width="1"/>
+        <path id="cQ1" d="" fill="var(--q1)"/><path id="cQ2" d="" fill="var(--q2)"/>
+        <path id="cQ3" d="" fill="var(--q3)"/><path id="cQ4" d="" fill="var(--q4)"/>
+        <circle cx="110" cy="110" r="34" fill="var(--paper)"/>
+        <text id="cTotal" x="110" y="106" text-anchor="middle" font-size="16" fill="var(--navy)" font-weight="700">0h</text>
+        <text x="110" y="124" text-anchor="middle" font-size="9" fill="var(--gray)">total logged</text>
+      </svg>
+    </div>
+  </div>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 12 · three questions + silence timer -->
+<section class="slide s-three">
+  <h2 class="ain">Three questions, in order</h2>
+  <p class="tq fg">1.  Which single Q1 block is worth protecting first?</p>
+  <p class="tq fg">2.  Which Q3 obligation could be delegated or automated within a month?</p>
+  <p class="tq fg">3.  Which Q4 commitment should be ended, not improved?</p>
+  <button id="ringbtn" type="button">▶ 30 seconds of silence  (T)</button>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 13 · one move -->
+<section class="slide s-bullets">
+  <h2 class="ain">One move, one date</h2>
+  <ul>
+   <li class="fg">One concrete change, dated, with a check-back in two weeks.</li>
+   <li class="fg lead">Not a life plan. One move.</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 14 · re-run monthly -->
+<section class="slide s-bullets">
+  <h2 class="ain">Re-run monthly</h2>
+  <ul>
+   <li class="fg">The first re-run’s job is honesty about the baseline, not improvement.</li>
+   <li class="fg">The delta between runs is the real score. A compass you consult once is a horoscope.</li>
+  </ul>
+  <svg class="hicon ain" viewBox="0 0 128 44" style="width:min(24vw,240px)" aria-hidden="true">
+    <g stroke-width="7">
+      <line x1="18"  y1="40" x2="18"  y2="28" stroke="var(--q3)"/>
+      <line x1="44"  y1="40" x2="44"  y2="26" stroke="var(--q3)"/>
+      <line x1="70"  y1="40" x2="70"  y2="18" stroke="var(--q3)"/>
+      <line x1="96"  y1="40" x2="96"  y2="12" stroke="var(--q3)"/>
+      <line x1="26"  y1="40" x2="26"  y2="36" stroke="var(--q1)"/>
+      <line x1="52"  y1="40" x2="52"  y2="32" stroke="var(--q1)"/>
+      <line x1="78"  y1="40" x2="78"  y2="24" stroke="var(--q1)"/>
+      <line x1="104" y1="40" x2="104" y2="14" stroke="var(--q1)"/>
+    </g>
+    <text x="64" y="6" text-anchor="middle" font-size="7" fill="var(--gray)" letter-spacing="2">M1 · M2 · M3 · M4</text>
+  </svg>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+<!-- 15 · three ways to run it -->
+<section class="slide s-bullets">
+  <h2 class="ain">Three ways to run this folder</h2>
+  <ul>
+   <li class="fg"><strong>Solo, with an agent</strong> — 25 minutes via SKILL.md, or a live FormLM form — scoring automatic, every re-run comparable.</li>
+   <li class="fg"><strong>Teaching the model</strong> — This deck plus the facilitator notes; the PDF edition rides the lectern.</li>
+   <li class="fg"><strong>Workshop, offline</strong> — One A4 answer sheet and one workbook per participant; the poker deck per table.</li>
+   <li class="fg lead">Variations: the quarterly audit · the career crossroads · the team allocation.</li>
+  </ul>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span><a class="wslink" href="https://workshopskill.com/en/guides/kirkpatrick-model/" target="_blank" rel="noopener">Why it works — the theory trail</a></span>
+</section>
+
+<!-- 16 · close -->
+<section class="slide s-quote">
+  <p class="q fg">A field tool, not a validated psychometric instrument.</p>
+  <p class="q qmid fg">It does not diagnose. It locates.</p>
+  <p class="q fg">Anyone who promises more than that is selling something.</p>
+  <div class="qrslot" id="qrslot">
+    <a class="wslink" href="https://workshopskill.com/en/activities/advantage-compass/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="1" y="1" width="38" height="38" fill="none" stroke="var(--brass)" stroke-width="1.4"/>
+      <rect x="5" y="5" width="10" height="10" fill="none" stroke="var(--navy)" stroke-width="2"/>
+      <rect x="25" y="5" width="10" height="10" fill="none" stroke="var(--navy)" stroke-width="2"/>
+      <rect x="5" y="25" width="10" height="10" fill="none" stroke="var(--navy)" stroke-width="2"/>
+      <g fill="var(--navy)"><rect x="21" y="21" width="3" height="3"/><rect x="27" y="21" width="3" height="3"/>
+      <rect x="21" y="27" width="3" height="3"/><rect x="31" y="27" width="3" height="3"/><rect x="25" y="31" width="3" height="3"/><rect x="31" y="33" width="3" height="3"/></g>
+    </svg></a>
+    <p>Scan for the digital edition — the live form, the printable kit, the model poster. <em>Swap this QR for your own code (QRCode-AI) or FormLM link — see the white-label guide.</em></p>
+  </div>
+  <p class="q fg" style="margin-top:3vh;color:var(--gray);font-size:clamp(12px,1.8vw,20px)">Print the deck · run the audit · re-run monthly</p>
+<span class="foot"><span>WorkshopSkill · The Advantage Compass — Slide Deck · CC BY 4.0</span></span>
+</section>
+
+</main>
+
+<div class="hud"><span class="pno" id="pno"></span><span class="clock" id="hudclock" style="display:none">00:00</span></div>
+<div id="hint">← → turn · Space next point · F fullscreen · N note · S presenter drawer · B house mode · T silence timer</div>
+<div id="spk"></div>
+<div id="prog"><span id="bar"></span></div>
+<div id="footqr"><a class="wslink" href="https://workshopskill.com/en/activities/advantage-compass/" target="_blank" rel="noopener" aria-label="digital edition QR"></a></div>
+
+<div id="drawer">
+  <div><h4>NOW</h4><div class="dnote" id="dNote"></div></div>
+  <div><h4>NEXT</h4><div class="dnext" id="dNext"></div></div>
+  <div class="tbox"><h4>RUN CLOCK</h4>
+    <div class="tbig" id="tBig">00:00</div>
+    <div class="alloc" id="tAlloc"></div>
+    <div class="tbtns"><button id="tPlay" type="button">Start</button>
+      <button id="tReset" type="button">Reset</button></div></div>
+  <div class="kcol"><h4>KEYS</h4>
+    <kbd>←→</kbd> page · <kbd>Space</kbd> point · <kbd>F</kbd> fullscreen<br>
+    <kbd>N</kbd> note · <kbd>S</kbd> drawer · <kbd>B</kbd> house mode · <kbd>T</kbd> silence</div>
+</div>
+
+<div id="ring"><svg width="150" height="150" viewBox="0 0 60 60">
+  <circle cx="30" cy="30" r="25" fill="none" stroke="#3A4552" stroke-width="4"/>
+  <circle id="ringArc" cx="30" cy="30" r="25" fill="none" stroke="#A8802E" stroke-width="4"
+    transform="rotate(-90 30 30)"/>
+  <text x="30" y="34" text-anchor="middle" id="ringNum">30</text></svg></div>
+
+<script>// Minimal QR encoder — byte mode, ECC level L, versions 1..5 (single RS block, <=106 bytes).
+// Browser + Node compatible. Used by the Advantage Compass deck (runtime) and build scripts (node).
+(function (root, factory) {
+  if (typeof module === "object" && module.exports) module.exports = factory();
+  else root.QRGen = factory();
+})(typeof self !== "undefined" ? self : this, function () {
+  "use strict";
+  // version -> {data: data codewords, ecc: ECC codewords} for level L
+  var CAP = { 1: [19, 7], 2: [34, 10], 3: [55, 15], 4: [80, 20], 5: [108, 26] };
+  var ALIGN = { 1: [], 2: [18], 3: [22], 4: [26], 5: [30] };
+  // GF(256) tables, primitive polynomial 0x11D
+  var EXP = new Uint8Array(512), LOG = new Uint8Array(256);
+  (function () { var x = 1; for (var i = 0; i < 255; i++) { EXP[i] = x; LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11D; } for (var j = 255; j < 512; j++) EXP[j] = EXP[j - 255]; })();
+  function gmul(a, b) { return (a === 0 || b === 0) ? 0 : EXP[LOG[a] + LOG[b]]; }
+  function rsGenerator(deg) {
+    var poly = [1];
+    for (var i = 0; i < deg; i++) {
+      var next = new Array(poly.length + 1).fill(0);
+      for (var j = 0; j < poly.length; j++) {
+        next[j] ^= poly[j];                       // * x
+        next[j + 1] ^= gmul(poly[j], EXP[i]);     // * a^i
+      }
+      poly = next;
+    }
+    return poly;
+  }
+  function rsEncode(data, eccLen) {
+    var gen = rsGenerator(eccLen), res = new Uint8Array(eccLen);
+    for (var i = 0; i < data.length; i++) {
+      var factor = data[i] ^ res[0];
+      res.copyWithin(0, 1); res[eccLen - 1] = 0;
+      for (var j = 0; j < eccLen; j++) res[j] ^= gmul(gen[j + 1], factor);
+    }
+    return res;
+  }
+  // bytes -> bit array
+  function buildBits(bytes, dataCw) {
+    var bits = [];
+    function put(val, len) { for (var i = len - 1; i >= 0; i--) bits.push((val >>> i) & 1); }
+    put(4, 4); put(bytes.length, 8);
+    for (var i = 0; i < bytes.length; i++) put(bytes[i], 8);
+    var cap = dataCw * 8;
+    put(0, Math.min(4, cap - bits.length));           // terminator
+    while (bits.length % 8) bits.push(0);             // byte align
+    var pads = [0xEC, 0x11], pi = 0;
+    while (bits.length < cap) put(pads[pi++ & 1], 8); // pad
+    var cw = new Uint8Array(dataCw);
+    for (var b = 0; b < dataCw; b++) { var v = 0; for (var j = 0; j < 8; j++) v = (v << 1) | bits[b * 8 + j]; cw[b] = v; }
+    return cw;
+  }
+  function maskFn(m, r, c) {
+    switch (m) {
+      case 0: return (r + c) % 2 === 0; case 1: return r % 2 === 0; case 2: return c % 3 === 0;
+      case 3: return (r + c) % 3 === 0; case 4: return ((r >> 1) + Math.floor(c / 3)) % 2 === 0;
+      case 5: return (r * c) % 2 + (r * c) % 3 === 0; case 6: return ((r * c) % 2 + (r * c) % 3) % 2 === 0;
+      default: return ((r + c) % 2 + (r * c) % 3) % 2 === 0;
+    }
+  }
+  function bch15(data) { // data: 5 bits
+    var v = data << 10;
+    for (var i = 14; i >= 10; i--) if ((v >>> i) & 1) v ^= 0x537 << (i - 10); // 0b10100110111
+    return ((data << 10) | v) ^ 0x5412; // XOR 101010000010010
+  }
+  function encode(text) {
+    var bytes = []; for (var i = 0; i < text.length; i++) { var cp = text.codePointAt(i);
+      if (cp < 0x80) bytes.push(cp); else if (cp < 0x800) { bytes.push(0xC0 | cp >> 6, 0x80 | cp & 63); }
+      else if (cp < 0x10000) { bytes.push(0xE0 | cp >> 12, 0x80 | (cp >> 6) & 63, 0x80 | cp & 63); }
+      else { i++; bytes.push(0xF0 | cp >> 18, 0x80 | (cp >> 12) & 63, 0x80 | (cp >> 6) & 63, 0x80 | cp & 63); } }
+    var ver = 0; for (var v = 1; v <= 5; v++) if (bytes.length + 2 <= CAP[v][0]) { ver = v; break; }
+    if (!ver) throw new Error("QRGen: payload too long (max ~104 bytes)");
+    var size = 17 + ver * 4, dataCw = CAP[ver][0], eccCw = CAP[ver][1];
+    var mod = [], fn = [];
+    for (var r = 0; r < size; r++) { mod.push(new Array(size).fill(false)); fn.push(new Array(size).fill(false)); }
+    function set(x, y, d) { if (x >= 0 && y >= 0 && x < size && y < size) { mod[y][x] = d; fn[y][x] = true; } }
+    // finder + separator (7x7 pattern + 1 cell light separator)
+    function finder(cx, cy) {
+      for (var yy = -4; yy <= 4; yy++) for (var xx = -4; xx <= 4; xx++) {
+        var dd = Math.max(Math.abs(xx), Math.abs(yy));
+        if (dd > 4) continue;
+        var px = cx + xx, py = cy + yy;
+        if (px < 0 || py < 0 || px >= size || py >= size) continue;
+        mod[py][px] = (dd < 2) || (dd === 3); fn[py][px] = true;
+      }
+    }
+    finder(3, 3); finder(size - 4, 3); finder(3, size - 4);
+    // timing
+    for (var t = 8; t < size - 8; t++) { if (!fn[6][t]) { mod[6][t] = t % 2 === 0; fn[6][t] = true; } if (!fn[t][6]) { mod[t][6] = t % 2 === 0; fn[t][6] = true; } }
+    // alignment
+    ALIGN[ver].forEach(function (c) {
+      for (var dy = -2; dy <= 2; dy++) for (var dx = -2; dx <= 2; dx++)
+        set(c + dx, c + dy, Math.max(Math.abs(dx), Math.abs(dy)) !== 1);
+    });
+    // dark module + format reserve
+    set(8, size - 8, true);
+    for (var k = 0; k <= 8; k++) { if (k !== 6) { fn[8][k] = true; fn[k][8] = true; } }
+    for (var a = 0; a < 8; a++) fn[8][size - 1 - a] = true;
+    for (var b2 = 0; b2 < 8; b2++) fn[size - 1 - b2][8] = true;
+    // codewords
+    var cw = buildBits(bytes, dataCw), ecc = rsEncode(cw, eccCw);
+    var seq = []; for (var q = 0; q < dataCw; q++) seq.push(cw[q]); for (var e = 0; e < eccCw; e++) seq.push(ecc[e]);
+    var bits = []; seq.forEach(function (by) { for (var i2 = 7; i2 >= 0; i2--) bits.push((by >>> i2) & 1); });
+    // draw zigzag (direction derived per column pair)
+    var bi = 0, total = bits.length;
+    for (var col = size - 1; col >= 1; col -= 2) {
+      if (col === 6) col = 5;
+      for (var vert = 0; vert < size; vert++) {
+        for (var j = 0; j < 2; j++) {
+          var x = col - j;
+          var up = ((col + 1) & 2) === 0;
+          var y = up ? size - 1 - vert : vert;
+          if (!fn[y][x] && bi < total) { mod[y][x] = !!bits[bi]; bi++; }
+        }
+      }
+    }
+    function applyMask(m) { for (var y = 0; y < size; y++) for (var x = 0; x < size; x++) if (!fn[y][x] && maskFn(m, y, x)) mod[y][x] = !mod[y][x]; }
+    function drawFormat(m) {
+      var f = bch15((1 << 3) | m); // ECL L = 01
+      function bit(i) { return ((f >> i) & 1) === 1; }
+      function setF(x, y, v) { mod[y][x] = v; }
+      for (var i3 = 0; i3 <= 5; i3++) setF(8, i3, bit(i3));
+      setF(8, 7, bit(6)); setF(8, 8, bit(7)); setF(7, 8, bit(8));
+      for (var j3 = 9; j3 <= 14; j3++) setF(14 - j3, 8, bit(j3));
+      for (var j4 = 0; j4 <= 7; j4++) setF(size - 1 - j4, 8, bit(j4));
+      for (var j5 = 8; j5 <= 14; j5++) setF(8, size - 15 + j5, bit(j5));
+      setF(8, size - 8, true);
+    }
+    function penalty() {
+      var p = 0;
+      function runs(line) { var n = 0, run = 1; for (var i = 1; i < line.length; i++) { if (line[i] === line[i - 1]) run++; else { if (run >= 5) n += 3 + run - 5; run = 1; } } if (run >= 5) n += 3 + run - 5; return n; }
+      for (var r2 = 0; r2 < size; r2++) { p += runs(mod[r2].slice()); var colv = []; for (var c3 = 0; c3 < size; c3++) colv.push(mod[c3][r2]); p += runs(colv); }
+      for (var r3 = 0; r3 < size - 1; r3++) for (var c4 = 0; c4 < size - 1; c4++) { var v2 = mod[r3][c4]; if (v2 === mod[r3][c4 + 1] && v2 === mod[r3 + 1][c4] && v2 === mod[r3 + 1][c4 + 1]) p += 3; }
+      var pat = [true, false, true, true, true, false, true, false, false, false, false];
+      function finderLike(line) { var n = 0; for (var i = 0; i + 11 <= line.length; i++) { var f = 0, rv = 0; for (var j = 0; j < 11; j++) { if (line[i + j] === pat[j]) f++; if (line[i + j] === pat[10 - j]) rv++; } if (f === 11 || rv === 11) n += 40; } return n; }
+      for (var r4 = 0; r4 < size; r4++) { var rowv = mod[r4].slice(); var colv2 = []; for (var c5 = 0; c5 < size; c5++) colv2.push(mod[c5][r4]); p += finderLike(rowv) + finderLike(colv2); }
+      var dark = 0; for (var r5 = 0; r5 < size; r5++) for (var c6 = 0; c6 < size; c6++) if (mod[r5][c6]) dark++;
+      var pct = dark * 100 / (size * size); var k5 = Math.floor(Math.abs(pct - 50) / 5); p += k5 * 10;
+      return p;
+    }
+    var best = 0, bestP = Infinity;
+    for (var m = 0; m < 8; m++) { applyMask(m); drawFormat(m); var pp = penalty(); if (pp < bestP) { bestP = pp; best = m; } applyMask(m); }
+    applyMask(best); drawFormat(best);
+    return { size: size, modules: mod };
+  }
+  function toSVG(text, opts) {
+    opts = opts || {}; var q = encode(text), m = q.modules, s = q.size, sc = opts.scale || 4, mg = opts.margin == null ? 4 : opts.margin;
+    var dim = (s + mg * 2) * sc, d = "";
+    for (var r = 0; r < s; r++) for (var c = 0; c < s; c++) if (m[r][c]) d += "M" + ((c + mg) * sc) + " " + ((r + mg) * sc) + "h" + sc + "v" + sc + "h-" + sc + "z";
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + dim + ' ' + dim + '" width="' + dim + '" height="' + dim + '" shape-rendering="crispEdges"><rect width="' + dim + '" height="' + dim + '" fill="' + (opts.bg || "#ffffff") + '"/><path d="' + d + '" fill="' + (opts.fg || "#1C2733") + '"/></svg>';
+  }
+  return { encode: encode, toSVG: toSVG };
+});
+</script>
+<script type="application/json" id="notes-data">["One line of promise. No definitions yet, no quadrant names.", "Let the trap question land before you name the tool.", "Count the raised hands out loud — your audience is in that count.", "Label vs. map: one sentence each. Do not define either.", "Ask the two questions first; name the axes only after they get personal.", "Fill Q3 first — the laugh is the concept landing.", "15% on a first run is the norm — say it before anyone counts theirs.", "This is the praised work. Say “worth less every month” slowly.", "One sentence per edge; do not reopen the debate.", "Ask for the distortion they can see in their own fortnight — hands stay up for this one.", "Your own numbers, including the embarrassing share.", "Invite a volunteer’s real hours. The verdict line does the teaching.", "Read each question once, then press T. Thirty seconds of silence feels long — that is the point.", "The output is one dated move — refuse life plans out loud.", "The delta is the score; the first re-run is about honesty, not improvement.", "Point at the kit files and where to get them, in one sentence. Say the boundary out loud — the honesty buys the credibility."]</script>
+<script type="application/json" id="alloc-data">[2, 1, 2, 3, 3, 3, 2, 3, 2, 3, 2, 3, 1, 1, 1, 2]</script>
+<script>
+(function(){
+"use strict";
+var slides=[].slice.call(document.querySelectorAll('.slide'));
+var bar=document.getElementById('bar'),pno=document.getElementById('pno'),
+    spk=document.getElementById('spk'),hint=document.getElementById('hint'),
+    hudClock=document.getElementById('hudclock');
+var notes=JSON.parse(document.getElementById('notes-data').textContent);
+var alloc=JSON.parse(document.getElementById('alloc-data').textContent);
+var cur=0,fi=0,spkOn=false,t0=Date.now();
+/* rose ticks */
+(function(){var g=document.getElementById('tk');if(!g)return;
+  for(var a=0;a<360;a+=15){var r=document.createElementNS('http://www.w3.org/2000/svg','line');
+    var rad=a*Math.PI/180,o=a%45===0?86:90;
+    r.setAttribute('x1',100+Math.sin(rad)*o);r.setAttribute('y1',100-Math.cos(rad)*o);
+    r.setAttribute('x2',100+Math.sin(rad)*94);r.setAttribute('y2',100-Math.cos(rad)*94);
+    g.appendChild(r);}})();
+function frs(i){return slides[i].querySelectorAll('.fg');}
+function fmt(s){var m=Math.floor(s/60),ss=s%60;
+  return (m<10?'0':'')+m+':'+(ss<10?'0':'')+ss;}
+/* ---------- run-of-show timer ---------- */
+var target=alloc.reduce(function(a,b){return a+b;},0)*60;
+var elapsed=0,running=false,iv=null,slideElapsed=0;
+function tick(){
+  elapsed++;slideElapsed++;
+  var big=document.getElementById('tBig'),al=document.getElementById('tAlloc');
+  hudClock.textContent=fmt(elapsed);hudClock.title=fmt(elapsed)+' / '+fmt(target);
+  if(big)big.textContent=fmt(elapsed);
+  hudClock.style.display=elapsed>3?'block':'none';
+  if(al&&alloc[cur]>0){
+    var over=slideElapsed>alloc[cur]*60;
+    al.textContent=fmt(slideElapsed)+' / '+alloc[cur]+' min';
+    al.className='alloc'+(over?' over':'');
+    hudClock.className=over?'clock over':'clock';
+  }else if(al){al.textContent='';}
+}
+function tToggle(){
+  running=!running;
+  var b=document.getElementById('tPlay');
+  if(b)b.textContent=running?'Pause':'Start';
+  if(running){if(!iv)iv=setInterval(tick,1000);}else if(iv){clearInterval(iv);iv=null;}
+}
+function tReset(){elapsed=0;slideElapsed=0;running=false;if(iv){clearInterval(iv);iv=null;}
+  hudClock.textContent='00:00';var b=document.getElementById('tPlay');
+  if(b)b.textContent='Start';}
+document.getElementById('tPlay').addEventListener('click',tToggle);
+document.getElementById('tReset').addEventListener('click',tReset);
+/* ---------- navigation ---------- */
+function hud(){
+  bar.style.width=((cur+1)/slides.length*100)+'%';
+  pno.textContent=(cur+1)+' / '+slides.length;
+  if(spkOn)spk.textContent=notes[cur];
+  var dn=document.getElementById('dNote'),nx=document.getElementById('dNext');
+  if(dn)dn.textContent=notes[cur]||'';
+  if(nx){nx.innerHTML=cur+1<slides.length
+    ?'<b>'+(cur+2)+'</b> · '+slides[cur+1].querySelector('h1,h2,.ql,p').textContent.trim().slice(0,60)
+      +'<br>'+(notes[cur+1]||''):'—';}
+}
+function show(i){
+  if(i<0||i>=slides.length)return;
+  slides[cur].classList.remove('act');
+  cur=i;slideElapsed=0;
+  var f=frs(cur);
+  for(var k=0;k<f.length;k++)f[k].classList.remove('on');
+  fi=0;slides[cur].classList.add('act');hud();
+  try{history.replaceState(null,'','#'+(cur+1));}catch(e){}
+}
+function next(){var f=frs(cur);
+  if(fi<f.length){f[fi++].classList.add('on');}
+  else if(cur<slides.length-1){show(cur+1);}}
+function prev(){var f=frs(cur);
+  if(fi>0){f[--fi].classList.remove('on');}
+  else if(cur>0){show(cur-1);
+    var g=frs(cur);for(var k=0;k<g.length;k++)g[k].classList.add('on');fi=g.length;}}
+function fs(){if(document.fullscreenElement){document.exitFullscreen();}
+  else{document.documentElement.requestFullscreen();}}
+function nkey(){spkOn=!spkOn;spk.style.display=spkOn?'block':'none';if(spkOn)spk.textContent=notes[cur];}
+function drawerKey(){var d=document.getElementById('drawer');
+  d.classList.toggle('open');hud();}
+/* ---------- silence ring ---------- */
+function ringRun(){
+  var ring=document.getElementById('ring'),arc=document.getElementById('ringArc'),
+      num=document.getElementById('ringNum');
+  if(ring.classList.contains('run'))return;
+  ring.classList.add('run');arc.style.transition='none';arc.style.strokeDashoffset=0;
+  arc.getBoundingClientRect();
+  arc.style.transition='stroke-dashoffset 30s linear';arc.style.strokeDashoffset=157;
+  var n=30;num.textContent=n;
+  var ivr=setInterval(function(){n--;num.textContent=n>0?n:'0';
+    if(n<=0){clearInterval(ivr);setTimeout(function(){
+      ring.classList.remove('run');arc.style.strokeDashoffset=0;},900);}},1000);
+}
+document.getElementById('ringbtn').addEventListener('click',function(e){e.stopPropagation();ringRun();});
+/* ---------- live audit device ---------- */
+var rows=[].slice.call(document.querySelectorAll('.arow'));
+function polar(cx,cy,r,deg){var a=(deg-90)*Math.PI/180;return[cx+r*Math.cos(a),cy+r*Math.sin(a)];}
+function wedgePath(a0,a1){
+  if(a1-a0<=0.01)return '';
+  if(a1-a0>=359.9)a1=a0+359.9;
+  var p0=polar(110,110,80,a0),p1=polar(110,110,80,a1),
+      q0=polar(110,110,34,a1),q1=polar(110,110,34,a0),
+      lg=a1-a0>180?1:0;
+  return 'M'+p0+'A80,80 0 '+lg+' 1 '+p1+'L'+q0+'A34,34 0 '+lg+' 0 '+q1+'Z';
+}
+function auditUpdate(){
+  var vals=[0,0,0,0],tot=0;
+  rows.forEach(function(r){var q=+r.dataset.q;
+    var v=+r.querySelector('input').value||0;if(v<0)v=0;if(v>80)v=80;
+    vals[q-1]=v;tot+=v;});
+  rows.forEach(function(r){var q=+r.dataset.q;
+    r.querySelector('.abar i').style.width=(tot?vals[q-1]/tot*100:0)+'%';});
+  var acc=0;
+  for(var i=0;i<4;i++){var a0=acc/tot*360;acc+=vals[i];var a1=acc/tot*360;
+    document.getElementById('cQ'+(i+1)).setAttribute('d',tot?wedgePath(a0,a1):'');}
+  document.getElementById('cTotal').textContent=tot+'h';
+  var v=document.getElementById('verdict');
+  if(!tot){v.textContent='Add hours per quadrant — the dial fills live.';v.className='verdict';}
+  else if((vals[2]+vals[3])/tot>0.6){v.textContent='The hostage calendar: over 60% in firefighting and burnout. Competent, busy — pointed nowhere.';v.className='verdict bad';}
+  else{v.textContent='Golden track share: '+Math.round(vals[0]/tot*100)+'% Q1 · The golden track';v.className='verdict';}
+}
+rows.forEach(function(r){
+  r.querySelector('input').addEventListener('input',auditUpdate);
+  [].slice.call(r.querySelectorAll('button')).forEach(function(b){
+    b.addEventListener('click',function(e){e.stopPropagation();
+      var inp=r.querySelector('input');
+      inp.value=Math.max(0,Math.min(80,(+inp.value||0)+ +b.dataset.d));auditUpdate();});
+  });
+});
+/* ---------- input routing ---------- */
+function typing(e){var t=e.target;return t.tagName==='INPUT'||t.tagName==='BUTTON';}
+document.addEventListener('keydown',function(e){
+  if(typing(e))return;
+  var k=e.key;
+  if(k==='ArrowRight'||k===' '||k==='PageDown'||k==='ArrowDown'){e.preventDefault();next();}
+  else if(k==='ArrowLeft'||k==='PageUp'||k==='ArrowUp'){e.preventDefault();prev();}
+  else if(k==='Home'){show(0);}
+  else if(k==='End'){show(slides.length-1);}
+  else if(k==='f'||k==='F'){fs();}
+  else if(k==='n'||k==='N'){nkey();}
+  else if(k==='s'||k==='S'){drawerKey();}
+  else if(k==='b'||k==='B'){document.body.classList.toggle('big');}
+  else if(k==='t'||k==='T'){ringRun();}
+});
+var tx=null;
+document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+document.addEventListener('touchend',function(e){
+  if(tx===null)return;
+  var dx=e.changedTouches[0].clientX-tx;
+  if(Math.abs(dx)>50){dx<0?next():prev();}
+  tx=null;
+},{passive:true});
+document.addEventListener('click',function(e){
+  if(e.target.closest('a,button,input,#drawer,#ring,#apad'))return;
+  if(Date.now()-t0<400)return;
+  e.clientX>window.innerWidth/2?next():prev();
+});
+/* ---------- QR: render real codes from the wslink hrefs (white-label drives them) ---------- */
+function mkQR(a){if(!a)return;var href=a.href;
+  function paint(u){a.innerHTML=QRGen.toSVG(u,{scale:3,margin:2,fg:'#1C2733',bg:'#F7F2E6'});}
+  try{paint(href);}
+  catch(e){try{var u=new URL(href);paint(u.origin+u.pathname);}catch(e2){}}}
+[].slice.call(document.querySelectorAll('#qrslot a, #footqr a')).forEach(mkQR);
+document.addEventListener('fullscreenchange',function(){document.body.classList.toggle('fs',!!document.fullscreenElement);});
+var h=parseInt((location.hash||'').slice(1),10);
+show(isNaN(h)?0:h-1);
+setTimeout(function(){if(hint)hint.style.opacity='0';},5200);
+})();
+</script>
+</body>
+</html>

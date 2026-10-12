@@ -1,0 +1,90 @@
+{
+  "id": "ws-activity-relay-brief",
+  "name": "Relay Brief",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "person",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "rb-03",
+      "rb-05"
+    ],
+    "range": [
+      5,
+      25
+    ],
+    "reported": [
+      "total_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report individual before/after deltas and the team's average shift. Never rank people by how much they dropped — the relay loses information at every hop by design; the point is the pattern, not a culprit."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 20,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for Relay Brief. Scores how a team's habit of checking instructions changes after they watch a five-constraint brief degrade across four hops: retention, clarifying before acting, assumption-injection (reverse), rebuild fidelity and single-source confidence (reverse).",
+  "instructions": {
+    "pre": "Before the relay. Each participant answers alone, about how handovers went in their own last week — not about the game.",
+    "post": "Right after the reveal and debrief. Same items, now answered about what the relay just showed them."
+  },
+  "items": [
+    {
+      "id": "rb-01",
+      "construct": "info-retention",
+      "pre_text": "When something is passed to me verbally, I catch all of the constraints.",
+      "post_text": "Seeing the brief shrink hop to hop showed me how much a verbal handover really loses.",
+      "reverse": false
+    },
+    {
+      "id": "rb-02",
+      "construct": "clarify-before-act",
+      "pre_text": "Before acting on an instruction, I restate it back to the person who gave it.",
+      "post_text": "After the relay, I want to restate a brief back before I act on it.",
+      "reverse": false
+    },
+    {
+      "id": "rb-03",
+      "construct": "assumption-injection",
+      "pre_text": "When an instruction is unclear, I fill the gap with what seems obvious and move on.",
+      "post_text": "The relay proved how each hop quietly fills gaps with guesses.",
+      "reverse": true
+    },
+    {
+      "id": "rb-04",
+      "construct": "rebuild-fidelity",
+      "pre_text": "I can rebuild a task's requirements from memory well enough to act on them.",
+      "post_text": "The final rebuild proved how little survives memory across even four hands.",
+      "reverse": false
+    },
+    {
+      "id": "rb-05",
+      "construct": "single-source-confidence",
+      "pre_text": "I trust that one clear telling of a brief is enough — no need to write it down.",
+      "post_text": "The relay made me want the brief in writing, not one voice down a line.",
+      "reverse": true
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Relay Brief — handover-discipline delta",
+    "sections": [
+      "Hop-by-hop fidelity loss (the constraint score at each hop)",
+      "Construct deltas with item-level evidence",
+      "One written-handover habit the team commits to, from the biggest positive delta"
+    ]
+  }
+}

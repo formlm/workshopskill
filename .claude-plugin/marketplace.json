@@ -1,0 +1,16 @@
+{
+  "name": "workshopskill",
+  "description": "46 ready-to-run facilitation activity skills for AI agents. Each skill folder holds a minute-by-minute run sheet, a debrief script and a pre/post measure spec. Free under CC BY 4.0.",
+  "owner": {
+    "name": "WorkshopSkill",
+    "email": "hello@workshopskill.com",
+    "url": "https://workshopskill.com"
+  },
+  "plugins": [
+    {
+      "name": "workshopskill",
+      "source": ".",
+      "description": "Facilitation activity skills: icebreakers, communication, conflict, leadership, retros and evaluation. One SKILL.md per activity, runnable in Claude Code, Codex, Gemini CLI, Cursor, Qoder and any skills loader."
+    }
+  ]
+}

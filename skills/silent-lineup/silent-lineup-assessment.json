@@ -1,0 +1,96 @@
+{
+  "id": "ws-activity-silent-lineup",
+  "name": "Silent Lineup",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "group",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "sl-03"
+    ],
+    "range": [
+      6,
+      30
+    ],
+    "reported": [
+      "group_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report group-level deltas only. Never rank individuals — the lineup measures the group's coordination habits, not charisma."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 10,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for the Silent Lineup leadership exercise. Scores at group level: how did initiative, legibility, distributed permission and follower choice change across the two lineups?",
+  "instructions": {
+    "pre": "Before the first lineup. Each participant answers alone, about their own last week at work — not about the exercise.",
+    "post": "Immediately after the debrief. Same items, now answered about both lineups, as a group."
+  },
+  "items": [
+    {
+      "id": "sl-01",
+      "construct": "initiative",
+      "pre_text": "In groups without an appointed leader, I move first.",
+      "post_text": "In the lineups, I (or several of us) moved first without being asked.",
+      "reverse": false
+    },
+    {
+      "id": "sl-02",
+      "construct": "legibility",
+      "pre_text": "I make my status and needs visible without being asked.",
+      "post_text": "We invented a legible code (finger-months) instead of vague gestures.",
+      "reverse": false
+    },
+    {
+      "id": "sl-03",
+      "construct": "waiting-for-permission",
+      "pre_text": "I wait for someone else to unstick a stalled group.",
+      "post_text": "When the line jammed, we waited for someone else to fix it.",
+      "reverse": true
+    },
+    {
+      "id": "sl-04",
+      "construct": "early-following",
+      "pre_text": "When someone makes a sensible first move, I back it quickly.",
+      "post_text": "The first movers got backed quickly — early followers made it a team.",
+      "reverse": false
+    },
+    {
+      "id": "sl-05",
+      "construct": "edge-awareness",
+      "pre_text": "I notice when someone is left at the edges of a group.",
+      "post_text": "Someone checked the edges — the January end needed help.",
+      "reverse": false
+    },
+    {
+      "id": "sl-06",
+      "construct": "silent-coordination",
+      "pre_text": "My team coordinates well even when talking is not possible.",
+      "post_text": "Two lineups, two systems — the group coordinated both times, wordlessly.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Silent Lineup — group coordination delta",
+    "sections": [
+      "Both lineups: first movers, codes invented, jams and unjamming",
+      "Construct deltas with item-level evidence",
+      "One suggested coordination move per group, derived from the largest positive delta"
+    ]
+  }
+}

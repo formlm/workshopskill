@@ -1,0 +1,96 @@
+{
+  "id": "ws-activity-start-stop-continue",
+  "name": "Start Stop Continue",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "team",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "sc-03"
+    ],
+    "range": [
+      6,
+      30
+    ],
+    "reported": [
+      "team_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report team-level deltas across cycles only. Never rank teams — the retro measures the team's honesty habits, not facilitation quality."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 30,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for the Start·Stop·Continue retrospective. Scores at team level: how did honesty of feedback, behavior-over-person framing and commitment quality change across the retro?",
+  "instructions": {
+    "pre": "Before cards are dealt. Each participant answers alone, about their own last cycle at work — not about the retro.",
+    "post": "Immediately after the debrief. Same items, now answered about the retro just completed, as a team."
+  },
+  "items": [
+    {
+      "id": "sc-01",
+      "construct": "honesty",
+      "pre_text": "I say what is not working while it is still working-ish.",
+      "post_text": "The STOP pile was honest — cards named real problems.",
+      "reverse": false
+    },
+    {
+      "id": "sc-02",
+      "construct": "behavior-framing",
+      "pre_text": "I describe behaviors, not people, when something goes wrong.",
+      "post_text": "Every card on the wall named a behavior — none named a person.",
+      "reverse": false
+    },
+    {
+      "id": "sc-03",
+      "construct": "safety-hiding",
+      "pre_text": "I soften feedback until it stops meaning anything.",
+      "post_text": "Some cards were softened until they meant nothing — we caught them.",
+      "reverse": true
+    },
+    {
+      "id": "sc-04",
+      "construct": "commitment-quality",
+      "pre_text": "Our action items survive the meeting they were born in.",
+      "post_text": "All three commitments passed the one-line test: auditable by anyone.",
+      "reverse": false
+    },
+    {
+      "id": "sc-05",
+      "construct": "shared-recognition",
+      "pre_text": "We tell each other what is working, not just what is broken.",
+      "post_text": "The CONTINUE pile named things the team wants to protect.",
+      "reverse": false
+    },
+    {
+      "id": "sc-06",
+      "construct": "retro-worth",
+      "pre_text": "Retrospectives on this team change something.",
+      "post_text": "This retro ended with three commitments that will be audited.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Start·Stop·Continue — team honesty delta",
+    "sections": [
+      "Wall shape: pile sizes, echo clusters, pocketed cards",
+      "Construct deltas with item-level evidence",
+      "The three commitments, restated in one auditable line each"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "ws-activity-the-orange",
+  "name": "The Orange",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "team",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "or-02",
+      "or-03",
+      "or-05"
+    ],
+    "range": [
+      6,
+      30
+    ],
+    "reported": [
+      "team_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report team-level deltas only. Never rank teams — the orange measures the team's negotiation process, not talent."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 20,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for The Orange negotiation exercise. Scores at team level: how did interest exploration, information sharing and integrative thinking change across the negotiation?",
+  "instructions": {
+    "pre": "Before briefs are handed out. Each participant answers alone, about their own last week at work — not about the exercise.",
+    "post": "Immediately after the debrief. Same items, now answered about the negotiation just completed, as a team."
+  },
+  "items": [
+    {
+      "id": "or-01",
+      "construct": "interest-exploration",
+      "pre_text": "In disagreements, I ask what the other side needs it for.",
+      "post_text": "During the negotiation, we asked (or regretted not asking) what they needed it for.",
+      "reverse": false
+    },
+    {
+      "id": "or-02",
+      "construct": "position-opening",
+      "pre_text": "I state my position early to anchor the discussion.",
+      "post_text": "We opened with our position — and the anchor held all eight minutes.",
+      "reverse": true
+    },
+    {
+      "id": "or-03",
+      "construct": "information-sharing",
+      "pre_text": "I share my real constraints when the other side hasn't earned it.",
+      "post_text": "We held our brief back the whole time — even when sharing it would have paid.",
+      "reverse": true
+    },
+    {
+      "id": "or-04",
+      "construct": "integrative-thinking",
+      "pre_text": "When two sides want the same thing, I look for what each actually needs.",
+      "post_text": "Once the interests surfaced, a deal beyond 'half each' appeared quickly.",
+      "reverse": false
+    },
+    {
+      "id": "or-05",
+      "construct": "equal-split-default",
+      "pre_text": "Splitting the difference feels like the fair ending to me.",
+      "post_text": "Half felt fair right up until the reveal showed what it cost.",
+      "reverse": true
+    },
+    {
+      "id": "or-06",
+      "construct": "question-before-counter",
+      "pre_text": "Before I counter an offer, I ask at least one question about it.",
+      "post_text": "Before our next disagreement, we will ask one question before countering.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "The Orange — team negotiation delta",
+    "sections": [
+      "Agreement slips compared: splits, integrations, walks",
+      "Construct deltas with item-level evidence",
+      "One suggested question habit per team, derived from the largest positive delta"
+    ]
+  }
+}

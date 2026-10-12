@@ -1,0 +1,96 @@
+{
+  "id": "ws-activity-paper-tower",
+  "name": "Paper Tower",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "team",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "pt-03"
+    ],
+    "range": [
+      6,
+      30
+    ],
+    "reported": [
+      "team_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report team-level deltas only. Never rank teams or individuals — the tower measures the team's working habits, not talent."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 30,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for the Paper Tower team challenge. Scores at team level: how did shared planning, role clarity, information flow and recovery from failure change across the build?",
+  "instructions": {
+    "pre": "Before teams form. Each participant answers alone, about their own last week at work — not about the exercise.",
+    "post": "Immediately after the debrief. Same items, now answered about the build just completed, as a team."
+  },
+  "items": [
+    {
+      "id": "pt-01",
+      "construct": "shared-planning",
+      "pre_text": "Before my team starts building, we sketch the plan together.",
+      "post_text": "During the build, we sketched or named the plan together before touching tape.",
+      "reverse": false
+    },
+    {
+      "id": "pt-02",
+      "construct": "role-clarity",
+      "pre_text": "On my team, I know which part is mine without being told.",
+      "post_text": "During the build, everyone knew which part was theirs.",
+      "reverse": false
+    },
+    {
+      "id": "pt-03",
+      "construct": "information-flow",
+      "pre_text": "I keep useful observations to myself when the room is busy.",
+      "post_text": "During the build, useful observations stayed unspoken while hands were busy.",
+      "reverse": true
+    },
+    {
+      "id": "pt-04",
+      "construct": "recovery",
+      "pre_text": "When something we built fails, we pause and change one thing.",
+      "post_text": "When the tower leaned or fell, we paused and changed one thing.",
+      "reverse": false
+    },
+    {
+      "id": "pt-05",
+      "construct": "participation-structure",
+      "pre_text": "The loudest voice on my team usually sets the direction.",
+      "post_text": "During the build, the loudest voice set the direction while others just held tape.",
+      "reverse": true
+    },
+    {
+      "id": "pt-06",
+      "construct": "tradeoff-awareness",
+      "pre_text": "I can name the trade my team is making between speed and stability.",
+      "post_text": "The book test made us name the speed-versus-stability trade we had made.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Paper Tower — team collaboration delta",
+    "sections": [
+      "Judge-card scores: height, book test, self-rated arguments",
+      "Construct deltas with item-level evidence",
+      "One suggested working-habit change per team, derived from the largest positive delta"
+    ]
+  }
+}

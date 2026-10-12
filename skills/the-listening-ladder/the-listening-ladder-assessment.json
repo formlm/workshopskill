@@ -1,0 +1,89 @@
+{
+  "id": "ws-activity-the-listening-ladder",
+  "name": "The Listening Ladder",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "pair",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "ll-04"
+    ],
+    "range": [
+      5,
+      25
+    ],
+    "reported": [
+      "pair_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report pair-level deltas only. Never rank individuals — the exercise measures how a pair moves up the listening ladder together, not who listens better alone."
+  },
+  "timing": {
+    "pre_minutes": 2,
+    "activity_minutes": 15,
+    "post_minutes": 2
+  },
+  "language": "en",
+  "description": "Two-minute pre/post measure for The Listening Ladder. Scores at pair level: how far did instruction, paraphrase, reflection and repair climb between round A (literal only), round B (add feeling) and round C (add what was left unsaid)?",
+  "instructions": {
+    "pre": "Before pairing up. Each participant answers alone, about their own last week at work — not about the exercise.",
+    "post": "Immediately after the debrief. Same items, now answered about the ladder just climbed, as a pair."
+  },
+  "items": [
+    {
+      "id": "ll-01",
+      "construct": "paraphrase-before-reply",
+      "pre_text": "Before I answer someone, I restate what I heard them say.",
+      "post_text": "In rounds B and C, we restated before we replied.",
+      "reverse": false
+    },
+    {
+      "id": "ll-02",
+      "construct": "feeling-recognition",
+      "pre_text": "I name the feeling under what a colleague says, not only the facts.",
+      "post_text": "In round B we named the feeling, not only the facts.",
+      "reverse": false
+    },
+    {
+      "id": "ll-03",
+      "construct": "unsaid-checking",
+      "pre_text": "I ask what is left unsaid before I assume I have the whole picture.",
+      "post_text": "In round C we asked what was left unsaid before assuming.",
+      "reverse": false
+    },
+    {
+      "id": "ll-04",
+      "construct": "self-reference-tendency",
+      "pre_text": "When someone describes a problem, I quickly relate it back to my own experience.",
+      "post_text": "In round C we kept the focus off our own story and on theirs.",
+      "reverse": true
+    },
+    {
+      "id": "ll-05",
+      "construct": "repair",
+      "pre_text": "When I realise I misheard, I go back and re-listen rather than plough on.",
+      "post_text": "When a validator card said 'not yet', we re-listened before moving on.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "The Listening Ladder — pair climb delta",
+    "sections": [
+      "Round A vs round B vs round C validator-card counts",
+      "Construct deltas with item-level evidence",
+      "One rung to practise next, chosen per pair from the smallest positive delta"
+    ]
+  }
+}

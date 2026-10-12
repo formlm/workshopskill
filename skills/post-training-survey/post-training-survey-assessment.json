@@ -1,0 +1,103 @@
+{
+  "id": "ws-template-post-training-survey",
+  "name": "Post-Training Survey",
+  "version": "1.0.0",
+  "type": "survey",
+  "unit": "individual",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "mean",
+    "reverse_scored_items": [
+      "pts-06"
+    ],
+    "range": [
+      1,
+      5
+    ],
+    "reported": [
+      "item_means",
+      "lowest_item",
+      "open_counts"
+    ],
+    "report_note": "Report room-level means only, always including the lowest item. Never report individual sheets or rankings. A high mean on the reverse item (pts-06) is a design alarm, not a passing grade."
+  },
+  "timing": {
+    "complete_minutes": 5,
+    "distribute": "last 5 minutes in-room",
+    "late_window": "same evening only"
+  },
+  "language": "en",
+  "description": "A one-page post-training feedback survey: 6 Likert items (1-5) plus 2 open questions. Designed to go one step past the satisfaction sheet — relevance, transfer intent, pace, facilitation quality, clarity, and one reverse-scored blocker item.",
+  "instructions": {
+    "when": "Last 5 minutes of the session, in the room. Same-evening link only if the agenda runs to the minute; next-day distribution collapses response rate below 25%.",
+    "how": "Anonymous. One answer per item, every item answered. Open questions: one honest sentence each."
+  },
+  "items": [
+    {
+      "id": "pts-01",
+      "construct": "relevance",
+      "text": "The session matched the problems I actually face at work.",
+      "reverse": false
+    },
+    {
+      "id": "pts-02",
+      "construct": "transfer-intent",
+      "text": "I can name one thing from today I will use within two weeks.",
+      "reverse": false
+    },
+    {
+      "id": "pts-03",
+      "construct": "pace",
+      "text": "The pace and difficulty fit the room.",
+      "reverse": false
+    },
+    {
+      "id": "pts-04",
+      "construct": "facilitation",
+      "text": "The facilitator made space for questions and disagreement.",
+      "reverse": false
+    },
+    {
+      "id": "pts-05",
+      "construct": "clarity",
+      "text": "I knew what each exercise was for while it was running.",
+      "reverse": false
+    },
+    {
+      "id": "pts-06",
+      "construct": "blocker",
+      "text": "Nothing from today will change how I work.",
+      "reverse": true
+    }
+  ],
+  "open_items": [
+    {
+      "id": "pts-07",
+      "prompt": "What is the one thing you will do differently on Monday?",
+      "codes_to": "30-day follow-up list"
+    },
+    {
+      "id": "pts-08",
+      "prompt": "What got in the way of your learning today?",
+      "codes_to": "redesign backlog"
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "strongly disagree",
+      "disagree",
+      "neutral",
+      "agree",
+      "strongly agree"
+    ]
+  },
+  "report": {
+    "title": "Post-Training Survey — room-level summary",
+    "sections": [
+      "Response rate and item means, lowest item named",
+      "Count of concrete Monday commitments (open item 1)",
+      "One quoted obstacle with permission (open item 2)"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "ws-activity-two-truths",
+  "name": "Two Truths and a Lie",
+  "version": "1.0.0",
+  "type": "pre-post",
+  "unit": "person",
+  "license": "CC-BY-4.0",
+  "scoring": {
+    "method": "sum",
+    "reverse_scored_items": [
+      "tt-02"
+    ],
+    "range": [
+      4,
+      20
+    ],
+    "reported": [
+      "person_delta",
+      "construct_deltas"
+    ],
+    "report_note": "Report room-level deltas only; individual answers stay private — this is an icebreaker, not an exam."
+  },
+  "timing": {
+    "pre_minutes": 1,
+    "activity_minutes": 15,
+    "post_minutes": 1
+  },
+  "language": "en",
+  "description": "One-minute pre/post measure for the Two Truths and a Lie icebreaker. Scores per person: how much of the room you actually got to know — recall, not cleverness.",
+  "instructions": {
+    "pre": "Before the circle forms. Each person answers alone, about the team they work with every day — the usual, not the game.",
+    "post": "Immediately after the light debrief. Same items, now answered about this session."
+  },
+  "items": [
+    {
+      "id": "tt-01",
+      "construct": "colleague-knowledge",
+      "pre_text": "I can name three checkable facts about each colleague I work with daily.",
+      "post_text": "I now hold at least three new facts about a colleague from this room.",
+      "reverse": false
+    },
+    {
+      "id": "tt-02",
+      "construct": "first-impressions",
+      "pre_text": "My first read of a colleague holds until it is proven wrong.",
+      "post_text": "During the voting, one of my confident reads proved wrong — and I enjoyed it.",
+      "reverse": true
+    },
+    {
+      "id": "tt-03",
+      "construct": "follow-up-curiosity",
+      "pre_text": "When a fact about a colleague surprises me, I ask a follow-up question.",
+      "post_text": "A surprise in this game became a question I asked out loud.",
+      "reverse": false
+    },
+    {
+      "id": "tt-04",
+      "construct": "disclosure-ease",
+      "pre_text": "Sharing work facts about myself in a group is easy for me.",
+      "post_text": "Saying my three statements in the circle was easy.",
+      "reverse": false
+    }
+  ],
+  "scale": {
+    "type": "likert-5",
+    "labels": [
+      "never",
+      "rarely",
+      "sometimes",
+      "often",
+      "always"
+    ]
+  },
+  "report": {
+    "title": "Two Truths and a Lie — recall delta",
+    "sections": [
+      "Room-level item deltas",
+      "Construct deltas with item-level evidence",
+      "One suggested follow-up conversation per participant, from the largest positive delta"
+    ]
+  }
+}
