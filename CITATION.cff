@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use WorkshopSkill facilitation activity folders, please cite the archive as follows."
+title: "WorkshopSkill — facilitation activity archive for trainers and AI agents"
+type: software
+authors:
+  - name: "WorkshopSkill"
+repository-code: "https://github.com/formlm/workshopskill"
+url: "https://workshopskill.com"
+license: CC-BY-4.0
+version: "1.0.0"
+date-released: 2026-10-12
+keywords:
+  - facilitation
+  - workshop
+  - training
+  - agent-skills
+  - soft-skills
+abstract: "Free archive of 46 ready-to-run facilitation activity folders. Each folder ships a minute-by-minute run sheet, presenter deck, printable props, debrief script, pre/post measure and a SKILL.md so both humans and AI agents can prepare and run the activity end to end."
